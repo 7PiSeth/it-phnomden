@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&family=Raleway:wght@300;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Battambang&family=Bayon&family=Bokor&family=Chenla&family=Content&family=Dangrek&family=Fasthand&family=Freehand&family=Great+Vibes&family=Hanuman&family=Khmer&family=Koh+Santepheap&family=Koulen&family=Metal&family=Moul&family=Moulpali&family=Nokora&family=Odor+Mean+Chey&family=Poppins&family=Preahvihear&family=Raleway:wght@300;500&family=Siemreap&family=Suwannaphum&family=Taprom&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  li {
+    @apply select-none;
+  }
+  body {
+    @apply light-mode dark:dark-mode;
+  }
+  .social-link>a{
+    @apply mx-3 md:mx-5 md:hover:opacity-70
+  }
+  .btn-group>button {
+    @apply py-3 dark:hover:bg-gray-700 hover:bg-slate-500 active:scale-110 duration-300
+    border-[1px] dark:border-gray-600 border-slate-500
+  }
+}
+
+@layer components {
+  .t-g {
+    @apply inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#4ca5ff] to-[#b673f8];
+  }
+  .t-g2 {
+    @apply inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#0f2027] to-[#2c5364];
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500
+  }
+  .silver {
+    @apply bg-gradient-to-l from-slate-300 to-slate-500;
+  }
+  .darkness {
+    @apply bg-gradient-to-r from-slate-900 to-slate-700;
+  }
+  .dark-mode {
+    @apply darkness text-slate-300;
+  }
+  .light-mode {
+    @apply silver text-black;
+  }
+
+}
