@@ -1,5 +1,5 @@
 import React from "react";
-import { BsPersonBadgeFill, BsTelegram, BsYoutube } from "react-icons/bs";
+import { BsPersonBadgeFill, BsTelegram, BsYoutube, BsGithub} from "react-icons/bs";
 import { FaFacebook} from "react-icons/fa";
 
 const Footer = () => {
@@ -10,11 +10,18 @@ const Footer = () => {
     >
       <div className="flex social-link">
       <a
-          href="https://it-phnomden.github.io/maportfolio/"
+          href="https://7piseth.github.io/maportfolio/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <BsPersonBadgeFill size={25} />
+        </a>
+        <a
+          href="https://github.com/7piseth"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BsGithub size={25} />
         </a>
         <a
           href="https://www.facebook.com/IT.phnomden"
