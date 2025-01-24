@@ -89,6 +89,15 @@ export const items = [
     duration: '20',
     itemtype: 'Self-improvement'
   },
+  {    
+    id: 11,
+    itemcategory: 'article',
+    itemid: "https://www.omaritani.com/blog/no-perfect-time-to-start",
+    title: "Stop Waiting For The Perfect Time to Start, All You Have is Today",
+    imgcoverlink: "https://images.squarespace-cdn.com/content/v1/52d481cbe4b0e9203b293536/1627677703759-S30BZ1LNTEH1EREGRABV/what+you+must+realize.png?format=2500w",
+    duration: '11',
+    itemtype: 'Self-improvement'
+  },
     // {    
   //   id: ,
   //   itemcategory: '',
