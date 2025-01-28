@@ -76,7 +76,7 @@ const BetterUp = () => {
                 <TiLightbulb size={24} className="dark:text-yellow-400 text-yellow-100"/> {data.itemtype}
               </p>
               <p className="opacity-50 sm:text-[14px] text-[13px]  p-1">
-                {data.duration}  minutes read
+                {data.duration === null?"spend weeks":data.duration + " minutes read"}
               </p>
               <a
                 href={data.itemid}

@@ -98,6 +98,15 @@ export const items = [
     duration: '11',
     itemtype: 'Self-improvement'
   },
+  {    
+    id: 12,
+    itemcategory: 'article',
+    itemid: "https://online.fliphtml5.com/vtzsn/zdbr/#p=1",
+    title: "អំណានជាអំណាច - និពន្ធដោយ ឡាំ លីម",
+    imgcoverlink: "https://www.techkhmer.net/wp-content/uploads/2020/03/read-is-power.jpg",
+    duration: null,
+    itemtype: 'Self-improvement'
+  },
     // {    
   //   id: ,
   //   itemcategory: '',
