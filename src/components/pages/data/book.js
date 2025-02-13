@@ -206,6 +206,10 @@ import image103 from "../../../assets/books/General Knowledge/Unlimited Memory -
 import book103 from "../../../assets/books/General Knowledge/Unlimited Memory - Kevin Horsley.pdf";
 import image104 from "../../../assets/books/Grammars/វេយ្យាករណ៍ភាសាអង់គ្លេស.png";
 import book104 from "../../../assets/books/Grammars/វេយ្យាករណ៍ភាសាអង់គ្លេស.pdf";
+import image105 from "../../../assets/books/History/សុបិននិងការពិត-ភាគ១-វ៉ាន់ឌី កាអុន.png";
+import book105 from "../../../assets/books/History/សុបិននិងការពិត-ភាគ១-វ៉ាន់ឌី កាអុន.pdf";
+import image106 from "../../../assets/books/History/សុបិននិងការពិត-ភាគ២-វ៉ាន់ឌី កាអុន.png";
+import book106 from "../../../assets/books/History/សុបិននិងការពិត-ភាគ២-វ៉ាន់ឌី កាអុន.pdf";
 
 
 export const bookInfo = [
@@ -936,5 +940,19 @@ export const bookInfo = [
     cover: image104,
     title: "វេយ្យាករណ៍ភាសាអង់គ្លេស",
     type: "Grammars"
+  },
+  {
+    id: 105,
+    file: book105,
+    cover: image105,
+    title: "សុបិននិងការពិត-ភាគ១-វ៉ាន់ឌី កាអុន",
+    type: "History"
+  },
+  {
+    id: 106,
+    file: book106,
+    cover: image106,
+    title: "សុបិននិងការពិត-ភាគ២-វ៉ាន់ឌី កាអុន",
+    type: "History"
   }
 ];
