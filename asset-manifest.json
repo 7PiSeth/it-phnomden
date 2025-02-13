@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/it-phnomden/static/css/main.700949ca.css",
-    "main.js": "/it-phnomden/static/js/main.ff65e866.js",
+    "main.js": "/it-phnomden/static/js/main.54134f69.js",
     "static/media/ទស្សនះវិទ្យា.pdf": "/it-phnomden/static/media/ទស្សនះវិទ្យា.729a0266fc3195de1df3.pdf",
     "static/media/History of Cambodia by Troeng Ngea part 1.pdf": "/it-phnomden/static/media/History of Cambodia by Troeng Ngea part 1.48a06cb34ba3efc60b8c.pdf",
     "static/media/អត្ថបទគោល របស់ សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុ សែន.pdf": "/it-phnomden/static/media/អត្ថបទគោល របស់ សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុ សែន.55d3694088ec6ca38843.pdf",
@@ -73,6 +73,7 @@
     "static/media/Free-English-Grammar-Book-Level-1.pdf": "/it-phnomden/static/media/Free-English-Grammar-Book-Level-1.cc9219d44acbc7e8c3e7.pdf",
     "static/media/Java Khmer .pdf": "/it-phnomden/static/media/Java Khmer .2b61e64e6348ce525013.pdf",
     "static/media/How To Stop Worrying And Start Living - Dale Carnegie.pdf": "/it-phnomden/static/media/How To Stop Worrying And Start Living - Dale Carnegie.35271f742b8cfd24183f.pdf",
+    "static/media/សុបិននិងការពិត-ភាគ២-វ៉ាន់ឌី កាអុន.pdf": "/it-phnomden/static/media/សុបិននិងការពិត-ភាគ២-វ៉ាន់ឌី កាអុន.5a66e1b0ebdfc483f67d.pdf",
     "static/media/HTML.KH.pdf": "/it-phnomden/static/media/HTML.KH.c258120324a31a25220c.pdf",
     "static/media/សម្រង់អក្ខរាវិរុទ្ធដែលងាយខុស.pdf": "/it-phnomden/static/media/សម្រង់អក្ខរាវិរុទ្ធដែលងាយខុស.c81c48888e6dc84ff63d.pdf",
     "static/media/រូបទី១២.pdf": "/it-phnomden/static/media/រូបទី១២.ad73b7df1bb0216106ee.pdf",
@@ -93,6 +94,7 @@
     "static/media/How to Think Like Bill Gates - Daniel Smith.pdf": "/it-phnomden/static/media/How to Think Like Bill Gates - Daniel Smith.e1b9804bc935206a56c1.pdf",
     "static/media/វេយ្យាករណ៍ភាសាអង់គ្លេស.pdf": "/it-phnomden/static/media/វេយ្យាករណ៍ភាសាអង់គ្លេស.b19d0c1ca1bf5854713b.pdf",
     "static/media/The Power Of Now - Eckhart Tolle.pdf": "/it-phnomden/static/media/The Power Of Now - Eckhart Tolle.d0f5e3446e11a9a21102.pdf",
+    "static/media/សុបិននិងការពិត-ភាគ១-វ៉ាន់ឌី កាអុន.pdf": "/it-phnomden/static/media/សុបិននិងការពិត-ភាគ១-វ៉ាន់ឌី កាអុន.c541dff17ccd32895211.pdf",
     "static/media/សំណួរ ចម្លើយប្រវត្តិវិទ្យាត្រៀមប្រឡងសញ្ញាប័ត្រទុតិយភូមិ.pdf": "/it-phnomden/static/media/សំណួរ ចម្លើយប្រវត្តិវិទ្យាត្រៀមប្រឡងសញ្ញាប័ត្រទុតិយភូមិ.2ffd526e6b158cc11987.pdf",
     "static/media/A Happy Married Life.pdf": "/it-phnomden/static/media/A Happy Married Life.b673ac765073501c55e3.pdf",
     "static/media/សិល្បះលួងលោម.pdf": "/it-phnomden/static/media/សិល្បះលួងលោម.86f7fe4bce5cf4f0072e.pdf",
@@ -100,6 +102,7 @@
     "static/media/C-Programming-Khmer-language.pdf": "/it-phnomden/static/media/C-Programming-Khmer-language.73353691c4fa7f564adf.pdf",
     "static/media/ស្រីហិតោបទេស part 2.pdf": "/it-phnomden/static/media/ស្រីហិតោបទេស part 2.a65d6a4eac02c77318f2.pdf",
     "static/media/ស្រីហិតោបទេស part 1.pdf": "/it-phnomden/static/media/ស្រីហិតោបទេស part 1.850c7a115f38e7b6ecf9.pdf",
+    "static/media/សុបិននិងការពិត-ភាគ២-វ៉ាន់ឌី កាអុន.png": "/it-phnomden/static/media/សុបិននិងការពិត-ភាគ២-វ៉ាន់ឌី កាអុន.fb608b3730b83c49e838.png",
     "static/media/C++ Programming.pdf": "/it-phnomden/static/media/C++ Programming.bc497778499d48e674e7.pdf",
     "static/media/ស៊ឹម អ្នកបរបើក_2.pdf": "/it-phnomden/static/media/ស៊ឹម អ្នកបរបើក_2.f6acb3a9edac21588f9a.pdf",
     "static/media/រឿងផ្កាស្រពោន_2.pdf": "/it-phnomden/static/media/រឿងផ្កាស្រពោន_2.804cd229a379dc6b6dd5.pdf",
@@ -108,6 +111,7 @@
     "static/media/ស្រីហិតោបទេស part 4.pdf": "/it-phnomden/static/media/ស្រីហិតោបទេស part 4.b5e9ff9a90c729ff2e4e.pdf",
     "static/media/Biology2016.pdf": "/it-phnomden/static/media/Biology2016.b2b8b67d02614d82f77b.pdf",
     "static/media/C-sharp 3.0 Design pattern.png": "/it-phnomden/static/media/C-sharp 3.0 Design pattern.6bf18e82409094d0acf1.png",
+    "static/media/សុបិននិងការពិត-ភាគ១-វ៉ាន់ឌី កាអុន.png": "/it-phnomden/static/media/សុបិននិងការពិត-ភាគ១-វ៉ាន់ឌី កាអុន.fb6d506dc8a48b47570d.png",
     "static/media/អំណានជាអំណាច.png": "/it-phnomden/static/media/អំណានជាអំណាច.16e551d45ea43b25e050.png",
     "static/media/Various Belief of Khmer.png": "/it-phnomden/static/media/Various Belief of Khmer.34af4c1036cca7ee0e7e.png",
     "static/media/ឪពុកអ្នកមាន បង្រៀនកូនអ្នកក្រ.png": "/it-phnomden/static/media/ឪពុកអ្នកមាន បង្រៀនកូនអ្នកក្រ.a8f0693157dd60e14b59.png",
@@ -215,10 +219,10 @@
     "static/media/Unlimited Memory - Kevin Horsley.jpg": "/it-phnomden/static/media/Unlimited Memory - Kevin Horsley.484978d4d73d876e42cc.jpg",
     "index.html": "/it-phnomden/index.html",
     "main.700949ca.css.map": "/it-phnomden/static/css/main.700949ca.css.map",
-    "main.ff65e866.js.map": "/it-phnomden/static/js/main.ff65e866.js.map"
+    "main.54134f69.js.map": "/it-phnomden/static/js/main.54134f69.js.map"
   },
   "entrypoints": [
     "static/css/main.700949ca.css",
-    "static/js/main.ff65e866.js"
+    "static/js/main.54134f69.js"
   ]
 }
