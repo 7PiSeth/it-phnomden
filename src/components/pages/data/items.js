@@ -107,6 +107,15 @@ export const items = [
     duration: null,
     itemtype: 'Self-improvement'
   },
+  {    
+    id: 13,
+    itemcategory: 'article',
+    itemid: "https://lessonofbooks.com/cant-hurt-me-by-david-goggins/",
+    title: "Can’t Hurt Me- by David Goggins – Book Summary, 10 Key Lessons, & Famous Quotes",
+    imgcoverlink: "https://lessonofbooks.com/wp-content/uploads/2025/01/Summary-of-Cant-Hurt-Me.png",
+    duration: '10',
+    itemtype: 'Self-improvement'
+  },
     // {    
   //   id: ,
   //   itemcategory: '',
