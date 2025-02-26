@@ -116,6 +116,15 @@ export const items = [
     duration: '10',
     itemtype: 'Self-improvement'
   },
+  {    
+    id: 14,
+    itemcategory: 'article',
+    itemid: "https://markmanson.net/40-lessons-at-40",
+    title: "40 Life Lessons I Know at 40 (That I Wish I Knew at 20) Written By Mark Manson",
+    imgcoverlink: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*scy1S4tRa0FGoex1",
+    duration: '10',
+    itemtype: 'Self-improvement'
+  },
     // {    
   //   id: ,
   //   itemcategory: '',
