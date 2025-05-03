@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/it-phnomden/static/css/main.700949ca.css",
-    "main.js": "/it-phnomden/static/js/main.6c26bdb5.js",
+    "main.js": "/it-phnomden/static/js/main.70470352.js",
     "static/media/ទស្សនះវិទ្យា.pdf": "/it-phnomden/static/media/ទស្សនះវិទ្យា.729a0266fc3195de1df3.pdf",
     "static/media/History of Cambodia by Troeng Ngea part 1.pdf": "/it-phnomden/static/media/History of Cambodia by Troeng Ngea part 1.48a06cb34ba3efc60b8c.pdf",
     "static/media/អត្ថបទគោល របស់ សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុ សែន.pdf": "/it-phnomden/static/media/អត្ថបទគោល របស់ សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុ សែន.55d3694088ec6ca38843.pdf",
@@ -60,7 +60,7 @@
     "static/media/ចោរ-ភ្នំ-ត្បែង.pdf": "/it-phnomden/static/media/ចោរ-ភ្នំ-ត្បែង.5625036dd6809c534c6a.pdf",
     "static/media/LOGICQUES- IQ.pdf": "/it-phnomden/static/media/LOGICQUES- IQ.00e58515b343a08145c7.pdf",
     "static/media/python-book-khmer.pdf": "/it-phnomden/static/media/python-book-khmer.a01dd3d32d0aefa56934.pdf",
-    "static/media/Ebook C\u0000# Khmer.pdf": "/it-phnomden/static/media/Ebook C# Khmer.06403afd1bf86580f2f5.pdf",
+    "static/media/Ebook C-Sharp Khmer.pdf": "/it-phnomden/static/media/Ebook C-Sharp Khmer.06403afd1bf86580f2f5.pdf",
     "static/media/C-sharp 3.0 Design pattern.pdf": "/it-phnomden/static/media/C-sharp 3.0 Design pattern.20aef54a52ac0a92d3b2.pdf",
     "static/media/មេរៀននិងលំហាត់គីមីវិទ្យាល្អៗតាមមេរៀននីមួយៗ.pdf": "/it-phnomden/static/media/មេរៀននិងលំហាត់គីមីវិទ្យាល្អៗតាមមេរៀននីមួយៗ.5605f8d4f7621d700c5f.pdf",
     "static/media/ប្រវត្តិសាស្រ្តកម្ពុជា និង វរជនខ្មែរ.pdf": "/it-phnomden/static/media/ប្រវត្តិសាស្រ្តកម្ពុជា និង វរជនខ្មែរ.a7aeca130bf3a5b7fb0f.pdf",
@@ -219,10 +219,10 @@
     "static/media/Unlimited Memory - Kevin Horsley.jpg": "/it-phnomden/static/media/Unlimited Memory - Kevin Horsley.484978d4d73d876e42cc.jpg",
     "index.html": "/it-phnomden/index.html",
     "main.700949ca.css.map": "/it-phnomden/static/css/main.700949ca.css.map",
-    "main.6c26bdb5.js.map": "/it-phnomden/static/js/main.6c26bdb5.js.map"
+    "main.70470352.js.map": "/it-phnomden/static/js/main.70470352.js.map"
   },
   "entrypoints": [
     "static/css/main.700949ca.css",
-    "static/js/main.6c26bdb5.js"
+    "static/js/main.70470352.js"
   ]
 }
