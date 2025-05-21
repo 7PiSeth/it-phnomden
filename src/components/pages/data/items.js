@@ -125,15 +125,15 @@ export const items = [
     duration: '10',
     itemtype: 'Self-improvement'
   },
-    // {    
-  //   id: ,
-  //   itemcategory: '',
-  //   itemid: "",
-  //   title: "",
-  //   imgcoverlink: null,
-  //   duration: '',
-  //   itemtype: ''
-  // },
+    {    
+    id: 15,
+    itemcategory: 'article',
+    itemid: "https://www.buzzfeed.com/hannahloewentheil/smartest-life-hacks",
+    title: "22 Genuinely Simple Life Hacks That Will Make You Say, \"Woah, That's Actually Really Smart\".",
+    imgcoverlink: "https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/811/2018/06/10174213/sunnylifehacks.png",
+    duration: '',
+    itemtype: 'Life-Hack'
+  },
     // {    
   //   id: ,
   //   itemcategory: '',
