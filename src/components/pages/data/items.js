@@ -134,15 +134,15 @@ export const items = [
     duration: '',
     itemtype: 'Life-Hack'
   },
-    // {    
-  //   id: ,
-  //   itemcategory: '',
-  //   itemid: "",
-  //   title: "",
-  //   imgcoverlink: null,
-  //   duration: '',
-  //   itemtype: ''
-  // },
+    {    
+    id: 16,
+    itemcategory: 'article',
+    itemid: "https://teachers.institute/learning-teaching/five-dimensions-effective-learning/",
+    title: "The five dimensions of effective learning",
+    imgcoverlink: "https://assets.dulwich.org/blocks/6-elearning-strategies-to-develop-deeper-learning-skills-e1489405475782-Dulwich_International_High_School_Suzhou.jpeg",
+    duration: '10',
+    itemtype: 'Self-improvement'
+  },
     // {    
   //   id: ,
   //   itemcategory: '',
