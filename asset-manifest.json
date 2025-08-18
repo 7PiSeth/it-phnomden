@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/it-phnomden/static/css/main.700949ca.css",
-    "main.js": "/it-phnomden/static/js/main.d1cfc3d7.js",
+    "main.css": "/it-phnomden/static/css/main.843c48bf.css",
+    "main.js": "/it-phnomden/static/js/main.d14ef64e.js",
     "static/media/ទស្សនះវិទ្យា.pdf": "/it-phnomden/static/media/ទស្សនះវិទ្យា.729a0266fc3195de1df3.pdf",
     "static/media/History of Cambodia by Troeng Ngea part 1.pdf": "/it-phnomden/static/media/History of Cambodia by Troeng Ngea part 1.48a06cb34ba3efc60b8c.pdf",
     "static/media/អត្ថបទគោល របស់ សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុ សែន.pdf": "/it-phnomden/static/media/អត្ថបទគោល របស់ សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុ សែន.55d3694088ec6ca38843.pdf",
@@ -151,6 +151,7 @@
     "static/media/betterup-your-life.png": "/it-phnomden/static/media/betterup-your-life.bb4ee718cc98468d93cd.png",
     "static/media/សិល្បះលួងលោម.png": "/it-phnomden/static/media/សិល្បះលួងលោម.4deef99ed7560574c87c.png",
     "static/media/ព្រះរាជាពង្សវតារ នៃ ប្រទេសកម្ពុជា.png": "/it-phnomden/static/media/ព្រះរាជាពង្សវតារ នៃ ប្រទេសកម្ពុជា.92f8fc33d5cf5dd02620.png",
+    "static/media/learn-english.png": "/it-phnomden/static/media/learn-english.71cb29052eb4a50c0cc4.png",
     "static/media/Rich Dad Poor Dad - Robert Kiyosaki.png": "/it-phnomden/static/media/Rich Dad Poor Dad - Robert Kiyosaki.48e8d3a9fd26cfc92a3b.png",
     "static/media/ស៊ឹម អ្នកបរបើក_2.png": "/it-phnomden/static/media/ស៊ឹម អ្នកបរបើក_2.447a5395c99dbefc9299.png",
     "static/media/English Khmer grammer.png": "/it-phnomden/static/media/English Khmer grammer.f92b60889eeca0ced6ef.png",
@@ -218,11 +219,11 @@
     "static/media/ស្រីហិតោបទេស part 4.png": "/it-phnomden/static/media/ស្រីហិតោបទេស part 4.ed7351854adce75483c6.png",
     "static/media/Unlimited Memory - Kevin Horsley.jpg": "/it-phnomden/static/media/Unlimited Memory - Kevin Horsley.484978d4d73d876e42cc.jpg",
     "index.html": "/it-phnomden/index.html",
-    "main.700949ca.css.map": "/it-phnomden/static/css/main.700949ca.css.map",
-    "main.d1cfc3d7.js.map": "/it-phnomden/static/js/main.d1cfc3d7.js.map"
+    "main.843c48bf.css.map": "/it-phnomden/static/css/main.843c48bf.css.map",
+    "main.d14ef64e.js.map": "/it-phnomden/static/js/main.d14ef64e.js.map"
   },
   "entrypoints": [
-    "static/css/main.700949ca.css",
-    "static/js/main.d1cfc3d7.js"
+    "static/css/main.843c48bf.css",
+    "static/js/main.d14ef64e.js"
   ]
 }
