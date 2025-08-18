@@ -1,13 +1,11 @@
-import React, { useState } from "react";
-import { items } from "./data/learn-english-items";
+import { routes } from "./data/router"; // import from data.js
 import { quotes } from "./data/quote";
 import { Carousel } from "@material-tailwind/react";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import { TiLightbulb } from "react-icons/ti";
-import ViewLearnEnglish from "../ViewLearnEnglish";
+import { Link } from "react-router-dom";
 
 const LearnEnglish = () => {
-  const [filePath, setFilePath] = useState("/item1.html");
   return (
     <div data-aos="fade-right" data-aos-offset="100">
       <Carousel
@@ -39,7 +37,7 @@ const LearnEnglish = () => {
               className="h-full w-full object-cover"
             />
             <div
-              className="absolute w-full h-full top-0 text-center flex flex-col items-center justify-center
+              className="absolute w-full h-full top-0 text-center flex flex-col   routes-center justify-center
             sm:text-2xl text-[11px]"
             >
               <p className="w-[70%] h-fit font-bold dark:drop-shadow-[0_0_1px_rgba(0,0,0,1)] drop-shadow-[0_0_1px_rgba(255,255,255,1)]">
@@ -56,7 +54,7 @@ const LearnEnglish = () => {
       </Carousel>
 
       <div className="grid grid-cols-2 gap-2 px-1 md:grid-cols-4 mt-3 w-full">
-        {items.map((data, key) => (
+        {  routes.slice(7).map((data, key) => (
           <div
             data-aos="zoom-in"
             data-aos-offset="10"
@@ -72,22 +70,20 @@ const LearnEnglish = () => {
             <p className="font-bold sm:text-[16px] text-[14px] h-fit">
               {data.title}
             </p>
-            <p className="sm:text-[16px] text-[14px] flex items-center gap-2">
+            <p className="sm:text-[16px] text-[14px] flex   routes-center gap-2">
               <TiLightbulb
                 size={24}
                 className="dark:text-yellow-400 text-yellow-100"
               />{" "}
               {data.itemtype}
             </p>
-            <button
-              onClick={() => setFilePath(data.location)}
-              className="dark:bg-black dark:bg-opacity-20 bg-white bg-opacity-20 rounded-lg px-4 sm:py-2 py-[7px] flex flex-col items-center group relative overflow-hidden transition duration-700 ease-in-out dark:hover:bg-opacity-30 dark:hover:border-gray-600 hover:bg-opacity-30 border-[0.5px] border-transparent hover:border-white active:scale-105 active:duration-100"
+            <Link
+              to={data.path}
+              className="dark:bg-black dark:bg-opacity-20 text-center bg-white bg-opacity-20 rounded-lg px-4 sm:py-2 py-[7px] flex flex-col   routes-center group relative overflow-hidden transition duration-700 ease-in-out dark:hover:bg-opacity-30 dark:hover:border-gray-600 hover:bg-opacity-30 border-[0.5px] border-transparent hover:border-white active:scale-105 active:duration-100"
             >
-              {alert(filePath)}
-              <ViewLearnEnglish filePath={filePath} />
               <span className="ease absolute right-0 -mt-12 h-72 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-200 group-hover:-translate-x-[500px]"></span>
               Learn
-            </button>
+            </Link>
           </div>
         ))}
       </div>
