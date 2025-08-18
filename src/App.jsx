@@ -5,7 +5,8 @@ import BookStore from "./components/pages/Book-Store";
 import GameStore from "./components/pages/Game-Store";
 import GameStoreDetail from "./components/pages/Game-Store-Detail";
 import PcProgramStore from "./components/pages/Pc-Program-Store";
-import MusicCamp from "./components/pages/Better-Up";
+import BetterUp from "./components/pages/Better-Up";
+import LearnEnglish from "./components/pages/Learn-English";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "./components/Footer";
@@ -25,7 +26,8 @@ const App = () => {
           <Route path="/BookStore" element={<BookStore />} />
           <Route path="/GameStore" element={<GameStore />} />
           <Route path="/PcProgramStore" element={<PcProgramStore />} />
-          <Route path="/BetterUp" element={<MusicCamp />} />
+          <Route path="/BetterUp" element={<BetterUp />} />
+          <Route path="/LearnEnglish" element={<LearnEnglish />} />
           <Route path="/GameStoreDetail" element={<GameStoreDetail />} />
         </Routes>
       <Footer />

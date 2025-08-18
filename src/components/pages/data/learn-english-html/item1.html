@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Guide: Side-by-Side</title>
+  <!-- Load Google Fonts for both English and Khmer fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Georgia&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Moulpali&family=Chenla&family=Battambang&family=Suwannaphum&display=swap" rel="stylesheet">
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom font-family variables for easy switching */
+    :root {
+      /* English Fonts */
+      --font-en-header: 'Roboto Slab', serif;
+      --font-en-subheader: 'Lora', serif;
+      --font-en-body: 'Georgia', serif;
+      --font-en-caption: 'Open Sans', sans-serif;
+      /* Khmer Fonts (Option 1) */
+      --font-kh-header: 'Moulpali', cursive;
+      --font-kh-subheader: 'Chenla', cursive;
+      --font-kh-body: 'Battambang', cursive;
+      --font-kh-caption: 'Suwannaphum', cursive;
+    }
+
+    /* English Fonts */
+    .font-en-header { font-family: var(--font-en-header); }
+    .font-en-subheader { font-family: var(--font-en-subheader); }
+    .font-en-body { font-family: var(--font-en-body); }
+    .font-en-caption { font-family: var(--font-en-caption); }
+    
+    /* Khmer Fonts */
+    .font-kh-header { font-family: var(--font-kh-header); }
+    .font-kh-subheader { font-family: var(--font-kh-subheader); }
+    .font-kh-body { font-family: var(--font-kh-body); }
+    .font-kh-caption { font-family: var(--font-kh-caption); }
+
+    /* General Body Font for fallbacks and default */
+    body { font-family: var(--font-en-body); }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-100 p-4 md:p-8 flex items-center justify-center antialiased">
+  <div class="max-w-5xl w-full bg-white rounded-xl shadow-lg p-6 md:p-10">
+    <h1 class="font-en-header text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 text-center text-gray-900 leading-tight">
+      The Learning Guide
+    </h1>
+    
+    <!-- Introduction Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-lg md:text-xl leading-relaxed text-gray-700">Ever watch a ton of tutorials or read countless articles, only to forget everything the next day?</p>
+        <p class="font-en-body text-lg md:text-xl leading-relaxed text-gray-700">You're not alone.</p>
+        <p class="font-en-body text-lg md:text-xl leading-relaxed text-gray-700">The truth is, you're probably learning the wrong way.</p>
+        <p class="font-en-body text-lg md:text-xl leading-relaxed text-gray-700">But don't worry, there's a smarter, faster way to learn anything, whether it's coding, a new language, or an instrument.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-lg md:text-xl leading-relaxed text-gray-700">តើអ្នកធ្លាប់ចំណាយពេលច្រើនម៉ោងមើលវីដេអូបង្រៀន អានអត្ថបទ ឬស្តាប់ផតខាស ហើយបន្ទាប់មកក៏ភ្លេចអ្វីៗទាំងអស់នៅថ្ងៃបន្ទាប់ទេ?</p>
+        <p class="font-kh-body text-lg md:text-xl leading-relaxed text-gray-700">អ្នកមិនមែននៅម្នាក់ឯងនោះទេ។</p>
+        <p class="font-kh-body text-lg md:text-xl leading-relaxed text-gray-700">ការពិតគឺថាអ្នកទំនងជាកំពុងរៀនខុសវិធីហើយ។</p>
+        <p class="font-kh-body text-lg md:text-xl leading-relaxed text-gray-700">ប៉ុន្តែកុំបារម្ភ ព្រោះមានវិធីដែលឆ្លាតជាង និងលឿនជាងមុន ដើម្បីរៀនអ្វីៗគ្រប់យ៉ាង មិនថាការសរសេរកូដ ភាសាថ្មី ឬឧបករណ៍ភ្លេងណាមួយនោះទេ។</p>
+      </div>
+    </div>
+
+    <!-- The Passive Learning Trap Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">The Passive Learning Trap</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">The biggest mistake we make when learning something new is relying too much on passive learning.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">This means just reading, watching, or listening without actually doing anything.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">It feels productive, but it's like expecting to get fit by just watching someone else at the gym.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Imagine you want to learn guitar.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">You watch two hours of tutorials, nodding along.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">But when you pick up the guitar, your fingers don't know what to do.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Why? Because your brain has only observed the skill; it hasn't experienced it.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Real learning starts when you try, fail, and adjust.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">កំហុសដ៏ធំបំផុតដែលយើងទាំងអស់គ្នាតែងតែធ្វើនៅពេលរៀនអ្វីថ្មី គឺយើងពឹងផ្អែកខ្លាំងពេកលើការរៀនអកម្ម។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">នេះមានន័យថាគ្រាន់តែអាន មើល និងស្តាប់ដោយមិនធ្វើសកម្មភាពអ្វីទាំងអស់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">វាមានអារម្មណ៍ថាដូចជាមានផលិតភាព ប៉ុន្តែវាដូចជាការគិតថាអ្នកនឹងមានរាងកាយមាំមួនដោយគ្រាន់តែមើលអ្នកផ្សេងទៅហាត់ប្រាណ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ស្រមៃថាអ្នកចង់រៀនលេងហ្គីតា។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">អ្នកចំណាយពេលពីរម៉ោងមើលវីដេអូនៅលើ YouTube ងក់ក្បាលគិតថា «បាទ ខ្ញុំយល់ហើយ»។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">បន្ទាប់មកនៅពេលអ្នកចាប់ហ្គីតា ស្រាប់តែម្រាមដៃរបស់អ្នកមិនដឹងថាត្រូវធ្វើអ្វី។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ហេតុអ្វីបានជាកើតមានបែបនេះ? ព្រោះខួរក្បាលរបស់អ្នកគ្រាន់តែបានសង្កេតមើលជំនាញនោះប៉ុណ្ណោះ មិនមែនបានជួបប្រទះផ្ទាល់ទេ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ការរៀនពិតប្រាកដចាប់ផ្តើមនៅពេលដែលអ្នកហ៊ានធ្វើនូវអ្វីដែលមិនស្រួលខ្លួន ពោលគឺនៅពេលអ្នកព្យាយាម នៅពេលអ្នកបរាជ័យ និងនៅពេលអ្នកកែតម្រូវ។</p>
+      </div>
+    </div>
+    
+    <!-- Desirable Difficulty Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">Desirable Difficulty: The Secret Sauce</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">This might sound strange, but desirable difficulty is key to learning fast.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Basically, the harder something feels when you're learning it, the more your brain grows.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Think of it like lifting weights: if you only lift two pounds, you won't build muscle.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">But if you lift something that challenges you, your body changes.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Your brain works the same way.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">When something feels difficult, it's your brain forming new connections.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Struggling isn't a sign you're bad at something; it's a sign your brain is working.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">So, when learning feels hard, that's a good thing—you're in the growth zone.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">រឿងនេះអាចស្តាប់ទៅចម្លែក ប៉ុន្តែ 'ភាពលំបាកដែលអាចប្រាថ្នាបាន' គឺជាគន្លឹះសំខាន់ក្នុងការរៀនសូត្រឱ្យបានលឿន។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ជាទូទៅ ការដែលអ្វីមួយមានអារម្មណ៍ថាលំបាកនៅពេលអ្នកកំពុងរៀន នោះខួរក្បាលរបស់អ្នកកាន់តែលូតលាស់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">គិតទៅមើលដូចជាការលើកទម្ងន់: ប្រសិនបើអ្នកគ្រាន់តែលើកទម្ងន់ ២ផោន អ្នកនឹងមិនបង្កើតសាច់ដុំទេ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ប៉ុន្តែប្រសិនបើអ្នកលើកអ្វីដែលប្រឈមនឹងអ្នក នោះរាងកាយរបស់អ្នកចាប់ផ្តើមផ្លាស់ប្តូរ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ខួរក្បាលរបស់អ្នកក៏ដំណើរការតាមរបៀបដូចគ្នាដែរ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">នៅពេលដែលអ្វីមួយមានអារម្មណ៍ថាលំបាក នោះគឺជាពេលដែលខួរក្បាលរបស់អ្នកកំពុងបង្កើតទំនាក់ទំនងថ្មី។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ការតស៊ូមិនមែនជាសញ្ញាថាអ្នកអន់នោះទេ តែវាជាសញ្ញាថាខួរក្បាលរបស់អ្នកកំពុងធ្វើការ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ដូច្នេះ ពេលក្រោយប្រសិនបើអ្នកកំពុងរៀន ហើយវាមានអារម្មណ៍ថាលំបាក គឺជារឿងល្អហើយ។ អ្នកកំពុងស្ថិតនៅក្នុងតំបន់រីកចម្រើន។</p>
+      </div>
+    </div>
+
+    <!-- Active Recall Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">Active Recall: Don't Just Review, Test Yourself</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">One of the most powerful learning techniques is active recall.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Instead of just rereading your notes, test yourself.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">When you try to remember something, your brain works harder, and that extra effort strengthens your memory.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">It's like working out—the more reps you do, the stronger your muscles get.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">So, after reading a page, ask yourself: 'What did I just learn? Can I explain it without looking?'</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">If you're learning about photography and read a tip about lighting, close the book and try explaining it to yourself, or better yet, to someone else.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">If you can teach it, you've truly learned it.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ឥឡូវនេះ យើងបន្តទៅបច្ចេកទេសរៀនសូត្រមួយដែលមានឥទ្ធិពលបំផុត គឺ 'ការរំលឹកសកម្ម'។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">បច្ចេកទេសនេះគឺជាការផ្លាស់ប្តូរដ៏ធំ។ មនុស្សភាគច្រើនពិនិត្យមើលកំណត់ត្រារបស់ពួកគេម្តងហើយម្តងទៀត ប៉ុន្តែការស្រាវជ្រាវបានបង្ហាញថាការសាកល្បងខ្លួនឯងមានប្រសិទ្ធភាពជាងឆ្ងាយណាស់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ហេតុអ្វី? ព្រោះនៅពេលអ្នកព្យាយាមចងចាំអ្វីមួយ ខួរក្បាលរបស់អ្នកធ្វើការកាន់តែខ្លាំង ហើយកិច្ចខិតខំប្រឹងប្រែងបន្ថែមនេះហើយដែលធ្វើឱ្យការចងចាំកាន់តែរឹងមាំ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">វាដូចជាការហាត់ប្រាណដែរ ការធ្វើម្តងហើយម្តងទៀតធ្វើឱ្យសាច់ដុំកាន់តែរឹងមាំ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ដូច្នេះជំនួសឱ្យការអានទំព័រមួយម្តងទៀត ចូរសួរខ្លួនឯងថា «តើខ្ញុំទើបតែរៀនអ្វីខ្លះ? តើខ្ញុំអាចពន្យល់វាបានទេដោយមិនមើល?»</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ឧទាហរណ៍ ប្រសិនបើអ្នកកំពុងរៀនអំពីការថតរូប ហើយបានអានគន្លឹះអំពីពន្លឺ ចូរបិទសៀវភៅហើយព្យាយាមពន្យល់វាទៅកាន់ខ្លួនឯង ឬទៅកាន់អ្នកផ្សេង។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ប្រសិនបើអ្នកអាចបង្រៀនវាបាន មានន័យថាអ្នកបានរៀនវាពិតប្រាកដហើយ។</p>
+      </div>
+    </div>
+
+    <!-- The Power of Practice, Not Perfection Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">The Power of Practice, Not Perfection</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Here's a myth we need to bust: you don't need to know everything before you start.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Many people wait until they feel 100% ready, but spoiler alert: you'll never feel completely ready.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Start with what you know and figure out the rest as you go.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">If you're learning to code, don't wait to understand every concept.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Write a small piece of code.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Break it.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Fix it.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Break it again.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">That's where real learning happens.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">The quicker you apply what you learn, the faster you grow.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">នេះគឺជាជំនឿខុសមួយទៀតដែលយើងត្រូវបំបែក៖ អ្នកមិនចាំបាច់ដឹងអ្វីៗគ្រប់យ៉ាងមុនពេលចាប់ផ្តើមទេ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">មនុស្សជាច្រើនរង់ចាំរហូតដល់ពួកគេមានអារម្មណ៍ថាត្រៀមខ្លួនរួចរាល់ ១០០% ប៉ុន្តែត្រូវដឹងថា អ្នកនឹងមិនមានអារម្មណ៍ថាត្រៀមខ្លួនពេញលេញនោះទេ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ចាប់ផ្តើមពីអ្វីដែលអ្នកដឹង ហើយស្វែងយល់ពីអ្វីដែលនៅសល់នៅតាមផ្លូវ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ប្រសិនបើអ្នកកំពុងរៀនសរសេរកូដ កុំរង់ចាំរហូតដល់អ្នកយល់គ្រប់គំនិតទាំងអស់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ចាប់ផ្តើមសរសេរកូដតូចមួយ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ធ្វើឱ្យវាខូច។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">កែវា។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ធ្វើឱ្យវាខូចម្តងទៀត។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">នោះហើយជាកន្លែងដែលការរៀនពិតប្រាកដកើតឡើង។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">កាន់តែអ្នកអនុវត្តនូវអ្វីដែលអ្នករៀនបានលឿន កាន់តែអ្នករីកចម្រើនលឿន។</p>
+      </div>
+    </div>
+    
+    <!-- Feedback Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">Feedback: Your Personal GPS for Growth</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Feedback is the GPS of learning.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">When you're driving and take a wrong turn, your GPS doesn't yell at you; it just says 'recalculating.'</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Feedback works the same way.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">It shows you what's working and what's not.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">If someone points out a mistake when you're learning to draw, it's not criticism; it's guidance—an opportunity for your brain to improve.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">There are two types of feedback: positive feedback reinforces what you're doing right, and negative feedback shows you where to improve.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Both are valuable.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">The faster you get feedback, the faster you learn.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Try to build feedback loops into your learning: record yourself, ask a mentor, or reflect on your performance.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">មតិកែលម្អគឺជាជីភីអេសនៃការរៀនសូត្រ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">នៅពេលអ្នកបើកបរហើយបត់ខុសផ្លូវ តើជីភីអេសរបស់អ្នកធ្វើអ្វី? វាគ្រាន់តែនិយាយថា 'កំពុងគណនាផ្លូវឡើងវិញ'។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">មតិកែលម្អក៏ដំណើរការដូចគ្នាដែរ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">វាបង្ហាញអ្នកថាអ្វីដែលកំពុងដំណើរការល្អ និងអ្វីដែលមិនល្អ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ប្រសិនបើអ្នកកំពុងរៀនគូររូប ហើយនរណាម្នាក់ចង្អុលបង្ហាញកំហុសមួយ វាមិនមែនជាការរិះគន់ទេ តែជាការណែនាំ—ជាឱកាសសម្រាប់ខួរក្បាលរបស់អ្នកក្នុងការកែលម្អ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">មានមតិកែលម្អពីរប្រភេទ៖ មតិកែលម្អវិជ្ជមានជួយពង្រឹងនូវអ្វីដែលអ្នកកំពុងធ្វើត្រូវ ហើយមតិកែលម្អអវិជ្ជមានបង្ហាញអ្នកថាត្រូវកែលម្អត្រង់ណា។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ទាំងពីរគឺមានតម្លៃណាស់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ហើយកាន់តែអ្នកទទួលបានមតិកែលម្អលឿន កាន់តែអ្នករៀនបានលឿន។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ព្យាយាមបង្កើត 'វដ្តនៃមតិកែលម្អ' ក្នុងការរៀនរបស់អ្នក៖ ថតរូបខ្លួនឯង សួរអ្នកណែនាំ ឬពិចារណាលើការអនុវត្តរបស់អ្នក។</p>
+      </div>
+    </div>
+
+    <!-- Learn from Experts Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">Learn from Experts: Shortcut the Process</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Want to learn faster?</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Surround yourself with people who are already good at what you're trying to learn.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Experts are like cheat codes in real life.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">They've made the mistakes and found the shortcuts.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Being around them will elevate your learning.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">For example, if you want to get better at public speaking, you could watch 100 TED Talks, or you could join a group like Toastmasters and speak every week.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">With real-time feedback from skilled speakers, you'll improve ten times faster.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Find communities, mentors, or even online forums to expose yourself to higher-level thinking.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">អ្នកចង់រៀនលឿន?</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ចូរហ៊ុំព័ទ្ធខ្លួនឯងជាមួយមនុស្សដែលពូកែរួចហើយក្នុងអ្វីដែលអ្នកកំពុងព្យាយាមរៀន។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">អ្នកជំនាញគឺជា 'កូដកាត់' ក្នុងជីវិតពិត។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ពួកគេបានធ្វើកំហុសរួចហើយ ពួកគេបានរកឃើញផ្លូវកាត់រួចហើយ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ការនៅក្បែរពួកគេនឹងជួយលើកកម្ពស់ការរៀនរបស់អ្នក។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ឧទាហរណ៍ ប្រសិនបើអ្នកចង់ពូកែនិយាយនៅទីសាធារណៈ អ្នកអាចមើល TED Talks ១០០ វីដេអូ ឬអ្នកអាចចូលរួមក្រុមដូចជា Toastmasters ហើយនិយាយរាល់សប្តាហ៍។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ជាមួយនឹងមតិកែលម្អភ្លាមៗពីអ្នកនិយាយដែលមានជំនាញ អ្នកនឹងប្រសើរឡើងលឿនជាង ១០ ដង។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ស្វែងរកសហគមន៍ អ្នកណែនាំ ឬសូម្បីតែវេទិកាតាមអ៊ីនធឺណិតដើម្បីទទួលបានគំនិតកម្រិតខ្ពស់។</p>
+      </div>
+    </div>
+    
+    <!-- Bonus Tip Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">Bonus Tip: Spaced Repetition</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">This technique pairs perfectly with active recall.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Instead of cramming all your learning into one session, spread it out over time.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Your brain needs time to forget and then remember again for memories to stick.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Apps like Anki or simple flashcards can work wonders.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Review a little every day instead of once a week, and you'll retain more in less time.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">បច្ចេកទេសនេះសាកសមបំផុតជាមួយការរំលឹកសកម្ម។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ជំនួសឱ្យការប្រមូលការរៀនសូត្ររបស់អ្នកទាំងអស់ក្នុងវគ្គតែមួយ ចូរបែងចែកវាតាមពេលវេលា។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ខួរក្បាលរបស់អ្នកត្រូវការពេលវេលាដើម្បីបំភ្លេច ហើយបន្ទាប់មកចងចាំម្តងទៀតដើម្បីឱ្យការចងចាំនៅជាប់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">កម្មវិធីដូចជា Anki ឬ flashcards សាមញ្ញអាចធ្វើការអស្ចារ្យ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ពិនិត្យមើលឡើងវិញបន្តិចបន្តួចជារៀងរាល់ថ្ងៃ ជំនួសឱ្យម្តងក្នុងមួយសប្តាហ៍ ហើយអ្នកនឹងរក្សាបានច្រើនក្នុងរយៈពេលតិច។</p>
+      </div>
+    </div>
+
+    <!-- Quick Recap Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">Quick Recap for Faster Learning:</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Ditch passive learning: Watching isn't enough; doing is key.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Embrace desirable difficulty: Struggle equals growth.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Use active recall: Don't just review; test yourself.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Apply immediately: Don't wait to feel ready; start now.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Space it out: Short, repeated sessions beat long cramming.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Get fast feedback: Adjust early and often.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Learn from experts: Shortcut years of trial and error.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">បោះបង់ការរៀនអកម្ម៖ ការមើលមិនគ្រប់គ្រាន់ទេ ការធ្វើគឺជារឿងសំខាន់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ទទួលយកភាពលំបាកដែលអាចប្រាថ្នាបាន៖ ការតស៊ូស្មើនឹងការរីកចម្រើន។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ប្រើការរំលឹកសកម្ម៖ កុំគ្រាន់តែពិនិត្យឡើងវិញ ត្រូវសាកល្បងខ្លួនឯង។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">អនុវត្តភ្លាមៗ៖ កុំរង់ចាំឱ្យមានអារម្មណ៍ថាត្រៀមខ្លួនរួចរាល់ ចាប់ផ្តើមឥឡូវនេះ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">បែងចែកវាចេញ៖ វគ្គខ្លីៗដែលធ្វើម្តងទៀតល្អជាងការរៀនដោយប្រមូលផ្តុំយូរ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ទទួលបានមតិកែលម្អលឿន៖ កែតម្រូវឱ្យបានឆាប់ និងញឹកញាប់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">រៀនពីអ្នកជំនាញ៖ កាត់បន្ថយការសាកល្បងនិងកំហុសរាប់ឆ្នាំ។</p>
+      </div>
+    </div>
+
+    <!-- Final Motivation Section -->
+    <h2 class="font-en-header text-2xl md:text-3xl font-bold mb-4 text-gray-800 text-center">Final Motivation</h2>
+    <hr class="mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 border-b border-gray-300 pb-4">
+      <div class="flex flex-col">
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Learning isn't about being perfect; it's about showing up, making mistakes, and getting a little better each time.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Your brain is like a muscle—it grows with use.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">So don't worry if it's hard; that means it's working!</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">If you apply these techniques, you will learn anything faster, no matter your age, background, or experience.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Start today, not next week.</p>
+        <p class="font-en-body text-base md:text-lg leading-relaxed text-gray-600">Pick the skill you want to learn, try one of these methods, and share your progress.</p>
+      </div>
+      <div class="flex flex-col">
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ការរៀនមិនមែននិយាយអំពីភាពល្អឥតខ្ចោះទេ វាគឺនិយាយអំពីការបង្ហាញខ្លួន ការធ្វើកំហុស និងការក្លាយជាមនុស្សល្អជាងមុនបន្តិចម្តងៗ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ខួរក្បាលរបស់អ្នកគឺដូចជាសាច់ដុំ—វារីកចម្រើនដោយសារការប្រើប្រាស់។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ដូច្នេះកុំបារម្ភប្រសិនបើវាលំបាក វាមានន័យថាវាដំណើរការហើយ!</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ប្រសិនបើអ្នកអនុវត្តបច្ចេកទេសទាំងនេះ អ្នកនឹងរៀនអ្វីៗគ្រប់យ៉ាងលឿនជាងមុន មិនថាអាយុ ប្រវត្តិ ឬបទពិសោធន៍របស់អ្នកយ៉ាងណានោះទេ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ចាប់ផ្តើមថ្ងៃនេះ មិនមែនសប្តាហ៍ក្រោយទេ។</p>
+        <p class="font-kh-body text-base md:text-lg leading-relaxed text-gray-600">ជ្រើសរើសជំនាញដែលអ្នកចង់រៀន សាកល្បងវិធីមួយក្នុងចំណោមវិធីទាំងនេះ ហើយចែករំលែកវឌ្ឍនភាពរបស់អ្នក។</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

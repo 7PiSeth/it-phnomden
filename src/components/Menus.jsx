@@ -2,6 +2,7 @@ import React from "react";
 import game from "../assets/game.png";
 import book from "../assets/book.png";
 import betterup from "../assets/betterup-your-life.png";
+import learnenglish from "../assets/learn-english.png";
 import program from "../assets/program.png";
 import { Link } from "react-router-dom";
 
@@ -17,15 +18,20 @@ const menus = [
     src: betterup,
     title: "BETTER UP YOUR MIND",
     page: "BetterUp",
+  }, {
+    id: 3,
+    src: learnenglish,
+    title: "Learn English",
+    page: "LearnEnglish",
   },
   {
-    id: 3,
+    id: 4,
     src: game,
     title: "PC GAME",
     page: "GameStore",
   },
   {
-    id: 4,
+    id: 5,
     src: program,
     title: "PC PROGRAM",
     page: "PcProgramStore",
