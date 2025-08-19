@@ -1,4 +1,4 @@
-import { routes } from "./data/router"; // import from data.js
+import { routes } from "./data/router";
 import { quotes } from "./data/quote";
 import { Carousel } from "@material-tailwind/react";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
@@ -30,14 +30,15 @@ const LearnEnglish = () => {
         )}
       >
         {quotes.map((data, key) => (
-          <span key={key} className="relative">
+          <span>
             <img
+              key={key}
               src={data.cover}
               alt={data.cover}
               className="h-full w-full object-cover"
             />
             <div
-              className="absolute w-full h-full top-0 text-center flex flex-col   routes-center justify-center
+              className="absolute w-full h-full top-0 text-center flex flex-col items-center justify-center
             sm:text-2xl text-[11px]"
             >
               <p className="w-[70%] h-fit font-bold dark:drop-shadow-[0_0_1px_rgba(0,0,0,1)] drop-shadow-[0_0_1px_rgba(255,255,255,1)]">
