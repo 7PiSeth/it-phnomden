@@ -261,7 +261,6 @@ const Item1 = () => {
 
   return (
     <div
-    data-aos="fade-right" data-aos-offset="100"
     className="bg-slate-100 mt-2 min-h-screen p-4 sm:p-8 md:p-12 text-gray-800">
 
       {/* Embedded CSS for font loading and styling */}
