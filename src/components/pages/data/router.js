@@ -9,6 +9,7 @@ import GameStoreDetail from "./../Game-Store-Detail.jsx";
 import Item1 from "./../learn-english-data/Item1.jsx";
 import Item2 from "./../learn-english-data/Item2.jsx";
 import Item3 from "./../learn-english-data/Item3.jsx";
+import Item4 from "./../learn-english-data/Item4.jsx";
 
 export const routes = [
   { path: "/", element: <Home />,title: null, imgcoverlink: null, itemtype: null },
@@ -21,4 +22,5 @@ export const routes = [
   { path: "/Item1", element: <Item1 />, title: "Improve Yourself 1% Every Day-Jim Rohn Motivation", imgcoverlink: "https://i.ytimg.com/vi/MpuhVcFnnIo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDwWvi3-oqDUHNPUmUN7O6crekPkg", itemtype: 'Self-improvement' },
   { path: "/Item2", element: <Item2 />, title: "Think Smarter with 9 Mental Models", imgcoverlink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-gzOxyW37RULb5nMlDfgT1ne2zFbQE7636w&s", itemtype: 'Self-improvement' },
   { path: "/Item3", element: <Item3 />, title: "Artificial Intelligence: A Double-Edged Sword", imgcoverlink: "https://www.ieltspodcast.com/wp-content/uploads/2019/06/BAND-9-SAMPLE-IELTS-ESSAYS-copy-300x169.png", itemtype: 'IELTS ESSAY' },
+  { path: "/Item4", element: <Item4 />, title: "The 7 Habits of Highly Effective Teens", imgcoverlink: "https://clarissejomini2022.wordpress.com/wp-content/uploads/2019/01/slide_1.jpg", itemtype: 'Self-improvement' },
 ];
