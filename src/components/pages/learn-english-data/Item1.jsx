@@ -1,9 +1,132 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+// SVG for the "play" speaker icon.
+const SpeakerPlayIcon = ({ size = 'w-5 h-5' }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`${size} cursor-pointer text-blue-500 hover:text-blue-700 transition-colors`}>
+    <path d="M13.5 4.5a.75.75 0 01.75.75v14.5a.75.75 0 01-.75.75h-2.25a.75.75 0 01-.75-.75V5.25a.75.75 0 01.75-.75h2.25zM6 6.75a.75.75 0 01.75-.75h2.25a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V6.75zM17.25 9a.75.75 0 01.75-.75h2.25a.75.75 0 01.75.75v6a.75.75 0 01-.75.75h-2.25a.75.75 0 01-.75-.75V9z" />
+  </svg>
+);
+
+// SVG for the "stop" speaker icon.
+const SpeakerStopIcon = ({ size = 'w-5 h-5' }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`${size} cursor-pointer text-blue-500 hover:text-blue-700 transition-colors`}>
+    <path fillRule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z" clipRule="evenodd" />
+  </svg>
+);
+
+// Component that manages the play/stop toggle behavior for voice-over.
+const VoiceToggle = ({ text, handleVoiceOver, selectedVoice }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentUtterance, setCurrentUtterance] = useState(null);
+
+  // Effect to update the state based on speech synthesis events.
+  useEffect(() => {
+    // A listener for when speech finishes.
+    const onEnd = () => setIsPlaying(false);
+    // A listener for when speech is canceled.
+    const onCancel = () => setIsPlaying(false);
+
+    // If an utterance exists, add event listeners.
+    if (currentUtterance) {
+      currentUtterance.addEventListener('end', onEnd);
+      currentUtterance.addEventListener('cancel', onCancel);
+    }
+
+    // Cleanup function to remove event listeners when the component unmounts or utterance changes.
+    return () => {
+      if (currentUtterance) {
+        currentUtterance.removeEventListener('end', onEnd);
+        currentUtterance.removeEventListener('cancel', onCancel);
+      }
+    };
+  }, [currentUtterance]);
+
+  // Handle the click event to play or stop the voice-over.
+  const handleClick = () => {
+    if (isPlaying) {
+      // If audio is playing, cancel it and update state.
+      window.speechSynthesis.cancel();
+      setIsPlaying(false);
+    } else {
+      // If audio is not playing, start it.
+      // Cancel any other current speech first.
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      if (selectedVoice) {
+        utterance.voice = selectedVoice;
+      }
+      window.speechSynthesis.speak(utterance);
+      setCurrentUtterance(utterance);
+      setIsPlaying(true);
+    }
+  };
+
+  return (
+    <span onClick={handleClick} className="ml-2">
+      {isPlaying ? <SpeakerStopIcon /> : <SpeakerPlayIcon />}
+    </span>
+  );
+};
 
 // Main Item1 component that renders the motivational content in both English and Khmer.
 const Item1 = () => {
+  // State to manage the popover's visibility and content.
+  const [popover, setPopover] = useState(null);
+  // State to hold the list of available voices.
+  const [voices, setVoices] = useState([]);
+  // State for the currently selected voice.
+  const [selectedVoice, setSelectedVoice] = useState(null);
+
+  // useEffect hook to load voices when the component mounts.
+  useEffect(() => {
+    // This event fires when the list of voices is changed.
+    // Some browsers load voices asynchronously.
+    const onVoicesChanged = () => {
+      const availableVoices = window.speechSynthesis.getVoices();
+      setVoices(availableVoices);
+      
+      // Set the default voice to the one at index 4, with a fallback.
+      const defaultVoice = availableVoices[4] || availableVoices.find(voice => voice.lang.includes('en-US')) || availableVoices[0];
+      setSelectedVoice(defaultVoice);
+    };
+
+    // Add the event listener for voice changes.
+    window.speechSynthesis.addEventListener('voiceschanged', onVoicesChanged);
+    // Call it immediately in case voices are already loaded.
+    onVoicesChanged();
+
+    // Cleanup function to remove the event listener.
+    return () => {
+      window.speechSynthesis.removeEventListener('voiceschanged', onVoicesChanged);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once on mount.
+
+  // Function to handle the voice-over using the Web Speech API.
+  const handleVoiceOver = (text) => {
+    // Check if the browser supports the Web Speech API.
+    if (!('speechSynthesis' in window)) {
+      console.error('Web Speech API is not supported in this browser.');
+      return;
+    }
+
+    // Stop any current speech before starting a new one.
+    window.speechSynthesis.cancel();
+    
+    // Create a new utterance with the provided text
+    const utterance = new SpeechSynthesisUtterance(text);
+    
+    // Set the selected voice from the component's state.
+    if (selectedVoice) {
+      utterance.voice = selectedVoice;
+    } else {
+      console.warn('No voice selected. Using the default browser voice.');
+    }
+    
+    // Speak the utterance.
+    window.speechSynthesis.speak(utterance);
+  };
+
   // A structured array containing both English and Khmer translations for each point.
-  // The 'hardWords' object is used by a utility function to Item1ly hover effects.
   const motivationContent = [
     {
       en_title: '1% Daily Improvement',
@@ -22,7 +145,7 @@ const Item1 = () => {
       km_title: 'ចាប់ផ្តើមពីតូច គិតឱ្យធំ',
       km_body: 'កុំភ័យខ្លាចដោយគោលដៅធំៗ។ ចាប់ផ្តើមដោយជំហានតូចៗដែលអាចគ្រប់គ្រងបាន ដើម្បីបង្កើតសន្ទុះ និងទម្លាប់ ខណៈពេលដែលរក្សាបាននូវចក្ខុវិស័យធំជាងមុន ដើម្បីណែនាំវឌ្ឍនភាពរបស់អ្នក។ យុទ្ធសាស្ត្រនេះជួយយកឈ្នះការភ័យខ្លាចបរាជ័យ។',
       hardWords: {
-        'overwhelmed': 'ភ័យខ្លាច',
+        'overwhelmed': 'មានអារម្មណ៍ភ័យខ្លាច',
         'momentum': 'សន្ទុះ',
         'habits': 'ទម្លាប់'
       }
@@ -33,6 +156,8 @@ const Item1 = () => {
       km_title: 'ការសម្រេចចិត្តប្រចាំថ្ងៃសម្រាប់១% កាន់តែប្រសើរ',
       km_body: 'ចាត់ទុកការកែលម្អប្រចាំថ្ងៃជាជម្រើសដឹងខ្លួន។ ការសម្រេចចិត្តប្រចាំថ្ងៃតូចៗទាំងនេះ ដូចជាការអានរយៈពេលប្រាំនាទីបន្ថែម ឬផឹកទឹកបន្ថែម នឹងបង្កើតទម្លាប់នៃការរីកចម្រើន។',
       hardWords: {
+        'view': 'ចាត់ទុក',
+        'conscious': 'ដឹងខ្លួន',
         'choice': 'ជម្រើស'
       }
     },
@@ -49,7 +174,7 @@ const Item1 = () => {
     {
       en_title: 'Ripple Effect of Small Wins',
       en_body: 'Acknowledge and celebrate small victories. These seemingly tiny achievements create momentum, build confidence, and lead to new, positive habits, eventually snowballing into extraordinary results.',
-      km_title: 'ផលប៉ះពាល់រលកនៃជ័យជំនះតូចៗ',
+      km_title: 'ផលប៉ះពាក់រលកនៃជ័យជំនះតូចៗ',
       km_body: 'ទទួលស្គាល់ និងអបអរសាទរជ័យជំនះតូចៗ។ សមិទ្ធផលតូចៗទាំងនេះបង្កើតសន្ទុះ បង្កើនទំនុកចិត្ត និងនាំទៅរកទម្លាប់វិជ្ជមានថ្មីៗ ដែលទីបំផុតនាំទៅរកលទ្ធផលដ៏អស្ចារ្យ។',
       hardWords: {
         'acknowledge': 'ទទួលស្គាល់',
@@ -74,7 +199,7 @@ const Item1 = () => {
       km_title: 'ហេតុអ្វីបានជាមនុស្សភាគច្រើនបោះបង់លឿនពេក',
       km_body: 'មនុស្សជាច្រើនបោះបង់ចោលភ្លាមៗមុនពេលជោគជ័យដោយសារតែការអត់ធ្មត់ និងការបាត់បង់ជំនឿ នៅពេលដែលវឌ្ឍនភាពថយចុះ។ ភាពជោគជ័យមិនមែនជាបន្ទាត់ត្រង់ទេ ហើយទាមទារការតស៊ូឆ្លងកាត់រយៈពេលដ៏លំបាក និងយឺត។ ជឿជាក់លើដំណើរការ ព្រោះការខិតខំប្រឹងប្រែងប្រហែលជាមិនបង្ហាញលទ្ធផលភ្លាមៗនោះទេ ដូចជាការលូតលាស់ដើមឫស្សីចិនអីចឹង។',
       hardWords: {
-        'breakthrough': 'ជោគជ័យ',
+        'breakthrough': 'ការសម្រេចចិត្ត',
         'impatience': 'ការអត់ធ្មត់',
         'persistence': 'ការតស៊ូ'
       }
@@ -92,36 +217,47 @@ const Item1 = () => {
     },
   ];
 
-  // Utility function to render a sentence with hoverable "hard words".
+  // Utility function to render a sentence with a clickable "hard word" span.
   const renderBody = (text, hardWords) => {
-    // Split the text into words and punctuation
-    const words = text.split(/(\s+|\p{P})/u).filter(Boolean);
-    return words.map((word, index) => {
-      // Clean the word for a case-insensitive lookup
-      const cleanedWord = word.replace(/[.,?!]/g, '').toLowerCase();
+    // Splits the text into words and punctuation while preserving delimiters.
+    const parts = text.split(/(\b)/).filter(Boolean);
+  
+    return parts.map((part, index) => {
+      // Trim to get the actual word without surrounding spaces
+      const cleanedPart = part.trim().toLowerCase();
       
-      // Check if the cleaned word is in our hardWords list
-      if (hardWords[cleanedWord]) {
+      // Check if the cleaned part is a "hard word".
+      if (hardWords[cleanedPart]) {
         return (
-          // Item1ly a span with a title attribute for the hover effect
+          // Renders a clickable span with a pointer cursor.
           <span
             key={index}
-            className="cursor-help underline-dashed-custom"
-            title={hardWords[cleanedWord]}
+            className="cursor-pointer underline-dashed-custom"
+            onClick={(e) => {
+              // Stop propagation to prevent the popover from immediately closing
+              e.stopPropagation(); 
+              // Get the position of the clicked element relative to the viewport
+              const rect = e.target.getBoundingClientRect();
+              // Set the popover state with word info and the calculated position
+              setPopover({
+                word: part,
+                translation: hardWords[cleanedPart],
+                // Calculate position relative to the viewport
+                x: rect.left,
+                y: rect.bottom,
+              });
+            }}
           >
-            {word}
+            {part}
           </span>
         );
       }
-      return <span key={index}>{word}</span>;
+      return <span key={index}>{part}</span>;
     });
   };
 
   return (
-    <div 
-    data-aos="fade-right"
-          data-aos-offset="100"
-    className="bg-slate-100 min-h-screen p-4 sm:p-8 md:p-12 text-gray-800">
+    <div className="mt-2 min-h-screen p-4 sm:p-8 md:p-12 text-gray-800">
 
       {/* Embedded CSS for font loading and styling */}
       <style>
@@ -145,7 +281,7 @@ const Item1 = () => {
           .caption-font {
             font-family: 'Open Sans', 'Suwannaphum', sans-serif;
           }
-
+          
           /* Custom CSS for the dashed underline effect on hard words */
           .underline-dashed-custom {
             text-decoration: none;
@@ -162,6 +298,32 @@ const Item1 = () => {
           Jim Rohn Motivation
         </h2>
 
+        {/* Voice Selection Dropdown */}
+        <div className="mb-8">
+          <label htmlFor="voice-select" className="block text-sm font-medium text-gray-700 mb-1">
+            Choose Voice
+          </label>
+          <select
+            id="voice-select"
+            className="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 transition-colors body-font"
+            value={selectedVoice?.name || ''}
+            onChange={(e) => {
+              const voice = voices.find(v => v.name === e.target.value);
+              setSelectedVoice(voice);
+            }}
+          >
+            {voices.length > 0 ? (
+              voices.map(voice => (
+                <option key={voice.name} value={voice.name}>
+                  {`${voice.name} (${voice.lang})`}
+                </option>
+              ))
+            ) : (
+              <option disabled>Loading voices...</option>
+            )}
+          </select>
+        </div>
+
         {/*
           Iterating over the content array to dynamically render each section.
           The parent div uses a grid layout that switches from a single column
@@ -172,28 +334,64 @@ const Item1 = () => {
             key={index} 
             className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 border-b-2 border-gray-200 pb-8 last:border-b-0"
           >
-            {/* Left column for English content */}
+            {/* Left column for English content with voice-over button */}
             <div className="flex flex-col">
-              <h3 className="text-xl font-bold mb-2 subtitle-font text-blue-700">
+              <h3 className="text-xl font-bold mb-2 subtitle-font text-blue-700 flex items-center">
                 {section.en_title}
+                <VoiceToggle 
+                  text={section.en_body} 
+                  handleVoiceOver={handleVoiceOver} 
+                  selectedVoice={selectedVoice} 
+                />
               </h3>
-              <p className="text-sm leading-relaxed body-font">
+              <p className="text-base leading-relaxed body-font">
                 {renderBody(section.en_body, section.hardWords)}
               </p>
             </div>
             
-            {/* Right column for Khmer content */}
+            {/* Right column for Khmer content without voice-over */}
             <div className="flex flex-col">
-              <h3 className="text-xl font-bold mb-2 subtitle-font text-blue-700">
+              <h3 className="text-xl font-bold mb-2 subtitle-font text-blue-700 flex items-center">
                 {section.km_title}
               </h3>
-              <p className="text-sm leading-relaxed body-font">
+              <p className="text-base leading-relaxed body-font">
                 {section.km_body}
               </p>
             </div>
           </section>
         ))}
       </div>
+
+      {/* Conditional rendering of the popover with smooth fade transition */}
+      {popover && (
+        <div
+          className="fixed inset-0 z-50 transition-opacity duration-300 ease-in-out"
+          onClick={() => setPopover(null)}
+        >
+          {/* Popover content positioned dynamically just below the word */}
+          <div
+            className="absolute bg-white p-4 rounded-lg shadow-xl border border-gray-200 text-center body-font"
+            style={{
+              top: `${popover.y + 10}px`, // Add a small buffer below the word
+              left: `${popover.x}px`,
+            }}
+            onClick={(e) => e.stopPropagation()} // Prevents closing on click inside
+          >
+            <h4 className="text-lg font-bold mb-1 text-blue-700 capitalize">
+              {popover.word}
+            </h4>
+            <p className="text-base text-gray-800">
+              {popover.translation}
+            </p>
+            {/* Voice-over button for the hard word */}
+            <button
+              onClick={() => handleVoiceOver(popover.word)}
+            >
+              <SpeakerPlayIcon size="w-8 h-8" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
