@@ -82,11 +82,14 @@ const Item1 = () => {
     // This event fires when the list of voices is changed.
     // Some browsers load voices asynchronously.
     const onVoicesChanged = () => {
-      const availableVoices = window.speechSynthesis.getVoices();
-      setVoices(availableVoices);
+      const allVoices = window.speechSynthesis.getVoices();
+      // Filter for English (en-US) voices
+      const usEnglishVoices = allVoices.filter(voice => voice.lang === 'en-US');
+      setVoices(usEnglishVoices);
       
-      // Set the default voice to the one at index 4, with a fallback.
-      const defaultVoice = availableVoices[4] || availableVoices.find(voice => voice.lang.includes('en-US')) || availableVoices[0];
+      // Set the default voice to the voice at index 3 of the filtered US English voices,
+      // with fallbacks if index 3 doesn't exist or no US English voices are found.
+      const defaultVoice = usEnglishVoices[3] || usEnglishVoices[0] || allVoices[0];
       setSelectedVoice(defaultVoice);
     };
 
