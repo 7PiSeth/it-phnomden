@@ -140,7 +140,7 @@ const Item2 = () => {
     },
     {
       en_title: 'Probabilistic Thinking',
-      en_body: 'Instead of viewing outcomes as black or white, this model encourages assigning a probability to an event hItem2ening. By using prior information and context, you can get a more accurate estimate of a situation, such as assessing a headline about rising crime.',
+      en_body: 'Instead of viewing outcomes as black or white, this model encourages assigning a probability to an event happening. By using prior information and context, you can get a more accurate estimate of a situation, such as assessing a headline about rising crime.',
       km_title: 'ការគិតបែបប្រូបាប៊ីលីតេ',
       km_body: 'ជំនួសឱ្យការមើលឃើញលទ្ធផលថាជាខ្មៅឬស គំរូនេះលើកទឹកចិត្តឱ្យកំណត់ប្រូបាប៊ីលីតេដល់ព្រឹត្តិការណ៍ដែលកើតឡើង។ តាមរយៈការប្រើប្រាស់ព័ត៌មាន និងបរិបទពីមុន អ្នកអាចទទួលបានការប៉ាន់ប្រមាណត្រឹមត្រូវបន្ថែមទៀតនៃស្ថានភាពមួយ ដូចជាការវាយតម្លៃចំណងជើងអំពីការកើនឡើងនៃឧក្រិដ្ឋកម្ម។',
       hardWords: {
@@ -152,13 +152,13 @@ const Item2 = () => {
     },
     {
       en_title: 'Inversion',
-      en_body: 'A powerful tool for problem-solving, inversion means Item2roaching a situation from the opposite end. Instead of thinking about what success looks like, you think about what failure would look like and what might cause it. Then you set your goals to avoid those pitfalls.',
+      en_body: 'A powerful tool for problem-solving, inversion means approaching a situation from the opposite end. Instead of thinking about what success looks like, you think about what failure would look like and what might cause it. Then you set your goals to avoid those pitfalls.',
       km_title: 'ការបញ្ច្រាស',
       km_body: 'ឧបករណ៍ដ៏មានឥទ្ធិពលសម្រាប់ការដោះស្រាយបញ្ហា ការបញ្ច្រាសមានន័យថាការខិតជិតស្ថានភាពពីចុងម្ខាងទៀត។ ជំនួសឱ្យការគិតអំពីអ្វីដែលជោគជ័យមើលទៅដូចម្ដេច អ្នកគិតអំពីអ្វីដែលបរាជ័យនឹងមើលទៅដូចម្ដេច ហើយអ្វីដែលអាចបណ្តាលឱ្យវា។ បន្ទាប់មកអ្នកកំណត់គោលដៅរបស់អ្នកដើម្បីជៀសវាងឧបសគ្គទាំងនោះ។',
       hardWords: {
         'inversion': 'ការបញ្ច្រាស',
         'pitfalls': 'ឧបសគ្គ',
-        'Item2roaching': 'ខិតជិត'
+        'approaching': 'ខិតជិត'
       }
     },
     {
