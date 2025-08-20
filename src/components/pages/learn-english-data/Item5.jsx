@@ -243,8 +243,8 @@ const splitTextByHardWords = (text, handleWordClick) => {
   return elements;
 };
 
-const App = () => {
-  const [playingSectionIndex, setPlayingSectionIndex] = useState(null);
+const Item5 = () => {
+  const [playingId, setPlayingId] = useState(null);
   const [isPaused, setIsPaused] = useState(false);
   const [voices, setVoices] = useState([]);
   const [selectedVoice, setSelectedVoice] = useState(null);
@@ -278,8 +278,8 @@ const App = () => {
     window.speechSynthesis.speak(utterance);
   };
 
-  const handleTitleAudio = (section, index) => {
-    if (playingSectionIndex === index) {
+  const handleAudio = (id, text) => {
+    if (playingId === id) {
       if (isPaused) {
         window.speechSynthesis.resume();
         setIsPaused(false);
@@ -289,10 +289,9 @@ const App = () => {
       }
     } else {
       window.speechSynthesis.cancel();
-      setPlayingSectionIndex(index);
+      setPlayingId(id);
       setIsPaused(false);
-      const textToSpeak = section.heading + ' ' + section.body.replace(/\s+/g, ' ');
-      handleSpeak(textToSpeak, () => setPlayingSectionIndex(null));
+      handleSpeak(text, () => setPlayingId(null));
     }
   };
 
@@ -334,7 +333,7 @@ const App = () => {
     <div className="bg-gray-50 text-gray-800 p-4 min-h-screen">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Noto+Serif+Khmer:wght@100..900&family=Siemreap&family=Kdam+Thmor+Pro&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Noto+Serif+Khmer:wght@100..900&family=Nokora&family=Kdam+Thmor+Pro&display=swap');
         
         /* Scaled English Fonts */
         .font-english-header-scaled {
@@ -357,7 +356,7 @@ const App = () => {
         /* Unscaled Khmer Fonts */
         .font-khmer-header { font-family: 'Koulen', cursive; }
         .font-khmer-subheading { font-family: 'Noto Serif Khmer', serif; }
-        .font-khmer-body { font-family: 'Siemreap', cursive; }
+        .font-khmer-body { font-family: 'Nokora', cursive; }
         .font-khmer-label { font-family: 'Kdam Thmor Pro', cursive; }
 
         /* Custom style for hard word underline */
@@ -378,53 +377,69 @@ const App = () => {
         }
       `}</style>
 
-      {/* Main content container */}
-      <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:gap-8 lg:gap-12 p-4">
-        {/* English Column */}
-        <div className="space-y-6">
-          <h1 className="font-english-header-scaled font-bold text-center mb-6">{englishContent.title}</h1>
-          
+      {/* Main content container with alternating sections */}
+      <div className="max-w-7xl mx-auto p-4 md:grid md:grid-cols-2 md:gap-8 lg:gap-12">
+        {/* English Title & Intro */}
+        <div className="space-y-6 md:col-span-1">
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="font-english-header-scaled font-bold text-center md:text-left">{englishContent.title}</h1>
+            <button
+              onClick={() => handleAudio('intro', englishContent.intro.replace(/\s+/g, ' '))}
+              className="p-2 rounded-full transition-colors duration-200"
+            >
+              {playingId === 'intro' && !isPaused ? (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-pause-circle text-red-500 w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="M10 15V9"/><path d="M14 15V9"/></svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-lines text-blue-500 w-6 h-6"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v12"/><path d="M22 10v3"/></svg>
+              )}
+            </button>
+          </div>
           <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
             <p className="font-english-body-scaled leading-tight text-gray-700">{splitTextByHardWords(englishContent.intro, handleWordClick)}</p>
           </div>
-
-          {englishContent.sections.map((section, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-md space-y-4">
-              <div className="flex items-center justify-between">
-                <h2 className="font-english-subheading-scaled font-semibold text-gray-900">{section.heading}</h2>
-                <button
-                  onClick={() => handleTitleAudio(section, index)}
-                  className="p-2 rounded-full transition-colors duration-200"
-                >
-                   {playingSectionIndex === index && !isPaused ? (
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-pause-circle text-red-500 w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="M10 15V9"/><path d="M14 15V9"/></svg>
-                   ) : (
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-lines text-blue-500 w-6 h-6"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v12"/><path d="M22 10v3"/></svg>
-                   )}
-                </button>
-              </div>
-              <p className="font-english-body-scaled leading-tight text-gray-700 whitespace-pre-line">
-                {splitTextByHardWords(section.body, handleWordClick)}
-              </p>
-            </div>
-          ))}
         </div>
-
-        {/* Khmer Column */}
-        <div className="space-y-6 mt-8 md:mt-0">
-          <h1 className="text-3xl lg:text-4xl font-khmer-header font-bold text-center mb-6">{khmerContent.title}</h1>
-
+        
+        {/* Khmer Title & Intro */}
+        <div className="space-y-6 mt-8 md:mt-0 md:col-span-1">
+          <h1 className="text-3xl lg:text-4xl font-khmer-header font-bold text-center mb-6 md:text-left">{khmerContent.title}</h1>
           <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
             <p className="font-khmer-body leading-relaxed text-gray-700">{khmerContent.intro}</p>
           </div>
-
-          {khmerContent.sections.map((section, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-md space-y-4">
-              <h2 className="text-2xl font-khmer-subheading font-semibold text-gray-900">{section.heading}</h2>
-              <p className="font-khmer-body leading-relaxed text-gray-700 whitespace-pre-line">{section.body}</p>
-            </div>
-          ))}
         </div>
+
+        {/* Alternating Sections */}
+        {englishContent.sections.map((englishSection, index) => (
+          <React.Fragment key={index}>
+            {/* English Section */}
+            <div className="space-y-6 mt-8 md:mt-0 md:col-span-1">
+              <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="font-english-subheading-scaled font-semibold text-gray-900">{englishSection.heading}</h2>
+                  <button
+                    onClick={() => handleAudio(index, englishSection.heading + ' ' + englishSection.body.replace(/\s+/g, ' '))}
+                    className="p-2 rounded-full transition-colors duration-200"
+                  >
+                    {playingId === index && !isPaused ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-pause-circle text-red-500 w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="M10 15V9"/><path d="M14 15V9"/></svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-lines text-blue-500 w-6 h-6"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v12"/><path d="M22 10v3"/></svg>
+                    )}
+                  </button>
+                </div>
+                <p className="font-english-body-scaled leading-tight text-gray-700 whitespace-pre-line">
+                  {splitTextByHardWords(englishSection.body, handleWordClick)}
+                </p>
+              </div>
+            </div>
+            {/* Khmer Section */}
+            <div className="space-y-6 mt-8 md:mt-0 md:col-span-1">
+              <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
+                <h2 className="text-2xl font-khmer-subheading font-semibold text-gray-900">{khmerContent.sections[index].heading}</h2>
+                <p className="font-khmer-body leading-relaxed text-gray-700 whitespace-pre-line">{khmerContent.sections[index].body}</p>
+              </div>
+            </div>
+          </React.Fragment>
+        ))}
       </div>
       
       {/* Hard Word Popup */}
@@ -449,4 +464,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Item5;
