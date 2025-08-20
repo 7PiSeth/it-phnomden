@@ -63,7 +63,7 @@ const hardWords = {
   'disarm': 'ដកហូតអាវុធ',
   'sputtered on': 'បានអូសបន្លាយ',
   'collapse': 'ការដួលរលំ',
-  'defected': 'បានធ្វើអត្តឃាត',
+  'defected': 'បានធ្វើការផ្តាច់ខ្លួន',
   'definitive end': 'ការបញ្ចប់ចុងក្រោយ',
   'set the stage': 'បង្កើតមូលដ្ឋាន',
   'century': 'សតវត្សរ៍',
@@ -204,7 +204,7 @@ const khmerContent = {
         
         សង្គ្រាមទ័ពព្រៃនេះ ដែលត្រូវបានជំរុញដោយភាពតានតឹងក្នុងសង្គ្រាមត្រជាក់ និងការប្រកួតប្រជែងភូមិសាស្ត្រនយោបាយ បានបន្តពេញមួយទសវត្សរ៍ឆ្នាំ ១៩៨០។ វៀតណាមបានដកទ័ពរបស់ខ្លួននៅឆ្នាំ ១៩៨៩ ហើយដំណើរការសន្តិភាពត្រូវបានចាប់ផ្តើមជាស្ថាពរ។ កិច្ចព្រមព្រៀងសន្តិភាពទីក្រុងប៉ារីសឆ្នាំ ១៩៩១ បាននាំមកនូវបេសកកម្មរក្សាសន្តិភាពដែលដឹកនាំដោយអង្គការសហប្រជាជាតិ (UNTAC) មកកាន់ប្រទេសកម្ពុជាដើម្បីដកហូតអាវុធបក្សពួក និងរៀបចំការបោះឆ្នោតដោយសេរី។
         
-        ទោះជាយ៉ាងណាក៏ដោយ សមាសធាតុនៃខ្មែរក្រហមបានបដិសេធមិនចូលរួម ហើយនៅតែបន្តប្រយុទ្ធ ដែលរំខានដល់សន្តិភាព។ ជម្លោះបានអូសបន្លាយជាច្រើនឆ្នាំទៀត។ ការដួលរលំចុងក្រោយនៃខ្មែរក្រហមបានកើតឡើងនៅពាក់កណ្តាលទសវត្សរ៍ឆ្នាំ ១៩៩០ នៅពេលដែលមេដឹកនាំជាន់ខ្ពស់បានធ្វើអត្តឃាត ហើយ ប៉ុល ពត បានស្លាប់នៅឆ្នាំ ១៩៩៨។ ការចាប់ខ្លួនមេដឹកនាំខ្មែរក្រហមដែលនៅសេសសល់ចុងក្រោយបង្អស់គឺ តា ម៉ុក ក្នុងឆ្នាំ ១៩៩៩ ត្រូវបានគេមើលឃើញថាជាការបញ្ចប់ចុងក្រោយនៃសង្គ្រាមស៊ីវិល និងជម្លោះជាច្រើនទសវត្សរ៍។`
+        ទោះជាយ៉ាងណាក៏ដោយ សមាសធាតុនៃខ្មែរក្រហមបានបដិសេធមិនចូលរួម ហើយនៅតែបន្តប្រយុទ្ធ ដែលរំខានដល់សន្តិភាព។ ជម្លោះបានអូសបន្លាយជាច្រើនឆ្នាំទៀត។ ការដួលរលំចុងក្រោយនៃខ្មែរក្រហមបានកើតឡើងនៅពាក់កណ្តាលទសវត្សរ៍ឆ្នាំ ១៩៩០ នៅពេលដែលមេដឹកនាំជាន់ខ្ពស់បានធ្វើការផ្តាច់ខ្លួន ហើយ ប៉ុល ពត បានស្លាប់នៅឆ្នាំ ១៩៩៨។ ការចាប់ខ្លួនមេដឹកនាំខ្មែរក្រហមដែលនៅសេសសល់ចុងក្រោយបង្អស់គឺ តា ម៉ុក ក្នុងឆ្នាំ ១៩៩៩ ត្រូវបានគេមើលឃើញថាជាការបញ្ចប់ចុងក្រោយនៃសង្គ្រាមស៊ីវិល និងជម្លោះជាច្រើនទសវត្សរ៍។`
     }
   ]
 };
@@ -230,7 +230,7 @@ const splitTextByHardWords = (text, handleWordClick) => {
     if (hardWords[cleanWord]) {
       return (
         <span key={index} 
-              className="relative z-10 font-crimson underline decoration-dashed decoration-2 hard-word-underline cursor-pointer"
+              className="relative z-10 font-cabin underline decoration-dashed decoration-2 hard-word-underline cursor-pointer"
               data-word={cleanWord}
               data-translation={hardWords[cleanWord]}
               onClick={handleWordClick}>
@@ -332,32 +332,48 @@ const Item5 = () => {
   return (
     <div className="bg-gray-50 text-gray-800 p-4 min-h-screen">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Noto+Serif+Khmer:wght@100..900&family=Nokora&family=Kdam+Thmor+Pro&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100..900&family=Varela+Round&family=Cabin:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@100..900&family=Battambang:wght@100;300;400;700;900&family=Noto Serif Khmer:wght@100;300;400;700;900&family=Nokora&display=swap');
         
-        /* Scaled English Fonts */
+        /* Scaled English Fonts - Option 10 */
         .font-english-header-scaled {
-          font-family: 'Oswald', sans-serif;
+          font-family: 'Saira Condensed', sans-serif;
           font-size: calc(1.3 * 30px); /* 39px */
+          line-height: 1;
         }
         .font-english-subheading-scaled {
-          font-family: 'Raleway', sans-serif;
+          font-family: 'Varela Round', sans-serif;
           font-size: calc(1.3 * 24px); /* 31.2px */
         }
         .font-english-body-scaled {
-          font-family: 'Crimson Text', serif;
+          font-family: 'Cabin', sans-serif;
           font-size: calc(1.3 * 16px); /* 20.8px */
+          line-height: 1.4;
         }
         .font-english-label-scaled {
-          font-family: 'Noto Sans', sans-serif;
+          font-family: 'Poppins', sans-serif;
           font-size: calc(1.3 * 16px); /* 20.8px */
         }
         
-        /* Unscaled Khmer Fonts */
-        .font-khmer-header { font-family: 'Koulen', cursive; }
-        .font-khmer-subheading { font-family: 'Noto Serif Khmer', serif; }
-        .font-khmer-body { font-family: 'Nokora', cursive; }
-        .font-khmer-label { font-family: 'Kdam Thmor Pro', cursive; }
+        /* Khmer Fonts - Option 10, increased size */
+        .font-khmer-header { 
+          font-family: 'Noto Serif Khmer', serif;
+          font-size: calc(1.2 * 30px); /* 36px */
+          line-height: 1.5;
+        }
+        .font-khmer-subheading { 
+          font-family: 'Battambang', cursive; 
+          font-size: calc(1.2 * 24px); /* 28.8px */
+        }
+        .font-khmer-body { 
+          font-family: 'Noto Serif Khmer', serif; 
+          font-size: calc(1.2 * 16px); /* 19.2px */
+          line-height: 1.6;
+        }
+        .font-khmer-label { 
+          font-family: 'Nokora', serif; 
+          font-size: calc(1.2 * 16px); /* 19.2px */
+        }
 
         /* Custom style for hard word underline */
         .hard-word-underline {
@@ -373,7 +389,7 @@ const Item5 = () => {
           border-radius: 8px;
           box-shadow: 0 4px 6px rgba(0,0,0,0.1);
           z-index: 50;
-          font-family: 'Kdam Thmor Pro', cursive;
+          font-family: 'Nokora', serif;
         }
       `}</style>
 
@@ -387,11 +403,7 @@ const Item5 = () => {
               onClick={() => handleAudio('intro', englishContent.intro.replace(/\s+/g, ' '))}
               className="p-2 rounded-full transition-colors duration-200"
             >
-              {playingId === 'intro' && !isPaused ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-pause-circle text-red-500 w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="M10 15V9"/><path d="M14 15V9"/></svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-lines text-blue-500 w-6 h-6"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v12"/><path d="M22 10v3"/></svg>
-              )}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-lines text-blue-500 w-6 h-6"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v12"/><path d="M22 10v3"/></svg>
             </button>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
@@ -419,11 +431,7 @@ const Item5 = () => {
                     onClick={() => handleAudio(index, englishSection.heading + ' ' + englishSection.body.replace(/\s+/g, ' '))}
                     className="p-2 rounded-full transition-colors duration-200"
                   >
-                    {playingId === index && !isPaused ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-pause-circle text-red-500 w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="M10 15V9"/><path d="M14 15V9"/></svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-lines text-blue-500 w-6 h-6"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v12"/><path d="M22 10v3"/></svg>
-                    )}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-lines text-blue-500 w-6 h-6"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v12"/><path d="M22 10v3"/></svg>
                   </button>
                 </div>
                 <p className="font-english-body-scaled leading-tight text-gray-700 whitespace-pre-line">
