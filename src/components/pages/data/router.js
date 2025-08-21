@@ -11,6 +11,7 @@ import Item2 from "./../learn-english-data/Item2.jsx";
 import Item3 from "./../learn-english-data/Item3.jsx";
 import Item4 from "./../learn-english-data/Item4.jsx";
 import Item5 from "./../learn-english-data/Item5.jsx";
+import Item6 from "./../learn-english-data/Item6.jsx";
 
 export const routes = [
   { path: "/", element: <Home />,title: null, imgcoverlink: null, itemtype: null },
@@ -24,5 +25,6 @@ export const routes = [
   { path: "/Item2", element: <Item2 />, title: "Think Smarter with 9 Mental Models", imgcoverlink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-gzOxyW37RULb5nMlDfgT1ne2zFbQE7636w&s", itemtype: 'Self-improvement' },
   { path: "/Item3", element: <Item3 />, title: "Artificial Intelligence: A Double-Edged Sword", imgcoverlink: "https://www.ieltspodcast.com/wp-content/uploads/2019/06/BAND-9-SAMPLE-IELTS-ESSAYS-copy-300x169.png", itemtype: 'IELTS ESSAY' },
   { path: "/Item4", element: <Item4 />, title: "The 7 Habits of Highly Effective Teens", imgcoverlink: "https://clarissejomini2022.wordpress.com/wp-content/uploads/2019/01/slide_1.jpg", itemtype: 'Self-improvement' },
-  { path: "/Item5", element: <Item5 />, title: "The Cambodian Civil War: A Historical Overview", imgcoverlink: "https://cdn.britannica.com/68/19068-004-3059FB3B/Pol-Pot-1980.jpg", itemtype: 'History' },
+  { path: "/Item5", element: <Item5 />, title: "The Cambodian Civil War: A Historical Overview", imgcoverlink: "https://cdn.cfr.org/sites/default/files/styles/full_width_xl/public/image/2025/04/Cambodia_Main_EB.webp", itemtype: 'History' },
+  { path: "/Item6", element: <Item6 />, title: "Ugly History: The Khmer Rouge murders - Timothy Williams", imgcoverlink: "https://i.ytimg.com/vi/8_TYFfkc_1U/maxresdefault.jpg", itemtype: 'History' },
 ];
