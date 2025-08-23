@@ -55,7 +55,7 @@ const LearnEnglish = () => {
       </Carousel>
 
       <div className="grid grid-cols-2 gap-2 px-1 md:grid-cols-4 mt-3 w-full">
-        {  routes.slice(7).map((data, key) => (
+        {routes.slice(7).filter(data => data.title).map((data, key) => (
           <div
             data-aos="zoom-in"
             data-aos-offset="10"
