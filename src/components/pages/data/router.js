@@ -202,9 +202,9 @@ export const routes = [
   {
     path: "/Item7",
     element: <Item7 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "One Day You’re Going To Meet Someone And Everything Will Make Sense",
+    imgcoverlink: "https://i.pinimg.com/1200x/af/64/bf/af64bf8cc0e563747f903eac17fa6ebf.jpg",
+    itemtype: "Love ❤️"
   },
   {
     path: "/Item8",
