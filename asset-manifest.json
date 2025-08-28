@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/it-phnomden/static/css/main.8d8bb7ba.css",
-    "main.js": "/it-phnomden/static/js/main.57ff2da8.js",
+    "main.css": "/it-phnomden/static/css/main.26baee05.css",
+    "main.js": "/it-phnomden/static/js/main.8f68c0ad.js",
     "static/media/ទស្សនះវិទ្យា.pdf": "/it-phnomden/static/media/ទស្សនះវិទ្យា.729a0266fc3195de1df3.pdf",
     "static/media/History of Cambodia by Troeng Ngea part 1.pdf": "/it-phnomden/static/media/History of Cambodia by Troeng Ngea part 1.48a06cb34ba3efc60b8c.pdf",
     "static/media/អត្ថបទគោល របស់ សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុ សែន.pdf": "/it-phnomden/static/media/អត្ថបទគោល របស់ សម្តេចអគ្គមហាសេនាបតីតេជោ ហ៊ុ សែន.55d3694088ec6ca38843.pdf",
@@ -219,11 +219,11 @@
     "static/media/ស្រីហិតោបទេស part 4.png": "/it-phnomden/static/media/ស្រីហិតោបទេស part 4.ed7351854adce75483c6.png",
     "static/media/Unlimited Memory - Kevin Horsley.jpg": "/it-phnomden/static/media/Unlimited Memory - Kevin Horsley.484978d4d73d876e42cc.jpg",
     "index.html": "/it-phnomden/index.html",
-    "main.8d8bb7ba.css.map": "/it-phnomden/static/css/main.8d8bb7ba.css.map",
-    "main.57ff2da8.js.map": "/it-phnomden/static/js/main.57ff2da8.js.map"
+    "main.26baee05.css.map": "/it-phnomden/static/css/main.26baee05.css.map",
+    "main.8f68c0ad.js.map": "/it-phnomden/static/js/main.8f68c0ad.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d8bb7ba.css",
-    "static/js/main.57ff2da8.js"
+    "static/css/main.26baee05.css",
+    "static/js/main.8f68c0ad.js"
   ]
 }
