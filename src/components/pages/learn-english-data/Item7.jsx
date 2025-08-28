@@ -233,15 +233,6 @@ const App = () => {
       const allVoices = window.speechSynthesis.getVoices();
       const usEnglishVoices = allVoices.filter(voice => voice.lang === 'en-US');
       setVoices(usEnglishVoices);
-
-      // Set default voice based on user preference
-      if (usEnglishVoices.length > 0) {
-        if (isMobile && usEnglishVoices.find(v => v.name === 'Samantha (en-US)')) {
-          setSelectedVoice(usEnglishVoices.find(v => v.name === 'Samantha (en-US)'));
-        } else {
-          setSelectedVoice(usEnglishVoices[3]); // 4th voice in the list
-        }
-      }
     };
 
     // The voicesChanged event is not supported by all browsers, so we call getVoices initially
@@ -250,7 +241,21 @@ const App = () => {
       window.speechSynthesis.onvoiceschanged = getVoices;
       getVoices(); // Call initially in case voices are already loaded
     }
-  }, [isMobile]);
+  }, []); // Note: No dependencies here to prevent infinite loop
+
+  // New Effect to handle voice selection after voices are loaded
+  useEffect(() => {
+    // This effect runs whenever the 'voices' state is updated, ensuring the list is available.
+    if (voices.length > 0) {
+      // Set default voice based on user preference
+      const samanthaVoice = voices.find(v => v.name === 'Samantha (en-US)');
+      if (isMobile && samanthaVoice) {
+        setSelectedVoice(samanthaVoice);
+      } else {
+        setSelectedVoice(voices[3]); // 4th voice in the list
+      }
+    }
+  }, [voices, isMobile]);
 
   // Handle voice-over for sections
   const handleVoiceOver = (id, text) => {
@@ -356,7 +361,7 @@ const App = () => {
         <select
           value={selectedVoice ? selectedVoice.name : ''}
           onChange={(e) => setSelectedVoice(voices.find(v => v.name === e.target.value))}
-          className="p-2 bg-white text-black border border-gray-300 rounded-md shadow-sm w-full sm:w-auto font-english-label"
+          className="p-2 border border-gray-300 rounded-md shadow-sm w-full sm:w-auto font-english-label bg-white text-black"
         >
           {voices.length > 0 ? (
             voices.map((voice) => (
@@ -418,7 +423,7 @@ const App = () => {
           style={{ top: `${popupContent.y}px`, left: `${popupContent.x}px` }}
         >
           <div className="flex items-center space-x-2">
-            <span className="font-khmer-label-style text-lg">{popupContent.translation}</span>
+            <span className="font-khmer-label-style text-lg text-black">{popupContent.translation}</span>
             <button
               onClick={() => handlePopupAudio(popupContent.word)}
               className="p-1 rounded-full text-blue-500 hover:bg-blue-100 transition-colors duration-200"
