@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaSun } from "react-icons/fa";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 
-const NavBar = () => {
+const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
@@ -50,4 +50,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default DarkModeToggle;
