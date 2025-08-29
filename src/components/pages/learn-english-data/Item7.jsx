@@ -67,30 +67,6 @@ const VolumeUpIcon = () => (
 );
 
 
-// This is a simulated tailwind.config.js to define custom fonts based on user's preference.
-// Font Option 2:
-// English: Headers: Playfair Display, Subheadings: Merriweather, Body: Lato, Labels: Montserrat
-// Khmer: Headers: Chenla, Subheadings: Nokora, Body: Hanuman, Labels: Battambang
-/*
-tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      fontFamily: {
-        'english-header': ['Playfair Display', 'serif'],
-        'english-subheading': ['Merriweather', 'serif'],
-        'english-body': ['Lato', 'sans-serif'],
-        'english-label': ['Montserrat', 'sans-serif'],
-        'khmer-header': ['Chenla', 'cursive'],
-        'khmer-subheading': ['Nokora', 'serif'],
-        'khmer-body': ['Hanuman', 'serif'],
-        'khmer-label': ['Battambang', 'serif'],
-      },
-    },
-  },
-};
-*/
-
 // Define hard words and their Khmer translations for the new content
 const hardWords = {
   'puzzle': 'ល្បែងផ្គុំរូប',
@@ -208,6 +184,18 @@ const contentData = [
   },
 ];
 
+// Array of image sources from user uploads
+const images = [
+  "https://images.pexels.com/photos/1415131/pexels-photo-1415131.jpeg",
+"https://images.pexels.com/photos/2407455/pexels-photo-2407455.jpeg",
+"https://images.pexels.com/photos/3089874/pexels-photo-3089874.jpeg",
+"https://images.pexels.com/photos/6563406/pexels-photo-6563406.jpeg",
+"https://images.pexels.com/photos/8204486/pexels-photo-8204486.jpeg",
+"https://images.pexels.com/photos/19838627/pexels-photo-19838627.jpeg",
+"https://images.pexels.com/photos/2407455/pexels-photo-2407455.jpeg",
+"https://images.pexels.com/photos/6818587/pexels-photo-6818587.jpeg",
+];
+
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [speakingSectionId, setSpeakingSectionId] = useState(null);
@@ -216,6 +204,16 @@ const App = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState({ word: '', translation: '', x: 0, y: 0 });
   const popupRef = useRef(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Effect to handle image slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 10000); // Change image every 10 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Effect to check for mobile on initial load and resize
   useEffect(() => {
@@ -248,7 +246,7 @@ const App = () => {
     // This effect runs whenever the 'voices' state is updated, ensuring the list is available.
     if (voices.length > 0) {
       // Set default voice based on user preference
-      const samanthaVoice = voices.find(v => v.name === 'Samantha (en-US)');
+      const samanthaVoice = voices.find(v => v.name.includes('Samantha'));
       if (isMobile && samanthaVoice) {
         setSelectedVoice(samanthaVoice);
       } else {
@@ -315,8 +313,9 @@ const App = () => {
     setPopupContent({
       word,
       translation,
-      x: rect.left + window.scrollX,
-      y: rect.top + window.scrollY,
+      // Position the popup below the word
+      x: rect.left + rect.width / 2 + window.scrollX,
+      y: rect.bottom + window.scrollY,
     });
     setShowPopup(true);
   };
@@ -346,11 +345,11 @@ const App = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-4 font-english-body">
-      {/* Image at the top of the screen */}
+      {/* Image slideshow at the top of the screen */}
       <img
-        src="https://i.pinimg.com/1200x/af/64/bf/af64bf8cc0e563747f903eac17fa6ebf.jpg"
+        src={images[currentImageIndex]}
         alt="A couple standing together, looking at the city skyline"
-        className="mx-auto rounded-xl shadow-lg mb-8 w-full max-w-4xl"
+        className="mx-auto rounded-xl shadow-lg mb-8 w-full max-w-4xl transition-opacity duration-1000 ease-in-out"
       />
 
       {/* Voice selection dropdown */}
@@ -465,7 +464,7 @@ const App = () => {
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
           padding: 1rem;
           z-index: 50;
-          transform: translate(-50%, -110%);
+          transform: translateX(-50%); /* This centers the popup horizontally */
           white-space: nowrap;
         }
       `}</style>
