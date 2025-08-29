@@ -239,7 +239,7 @@ const Item4 = () => {
     };
 
     return (
-        <div className="p-8 px-1 bg-gray-50 min-h-screen">
+        <div className="p-8 bg-gray-50 min-h-screen">
             <style>
                 {`
                 /* Import English Fonts */
@@ -282,7 +282,7 @@ const Item4 = () => {
                 <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
                     
                     {/* English Column */}
-                    <div className="p-6 px-2 md:w-1/2">
+                    <div className="p-6 md:w-1/2">
                         {essayData.sections.map((section, index) => (
                             <div key={index} className="mb-8">
                                 <h2 className="text-2xl font-bold subtitle-font text-gray-800 mb-2 flex items-center gap-2">
