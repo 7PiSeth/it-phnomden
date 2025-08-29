@@ -239,7 +239,7 @@ const Item4 = () => {
     };
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
+        <div className="p-8 px-2 bg-gray-50 min-h-screen">
             <style>
                 {`
                 /* Import English Fonts */
@@ -270,7 +270,7 @@ const Item4 = () => {
                 }
                 `}
             </style>
-            <div className="max-w-7xl mx-auto rounded-xl shadow-lg overflow-hidden bg-white">
+            <div className="max-w-7xl mx-auto mt-5 rounded-xl shadow-lg overflow-hidden bg-white">
                 
                 {/* Main Title Section */}
                 <div className="bg-gray-800 text-white p-6 text-center">

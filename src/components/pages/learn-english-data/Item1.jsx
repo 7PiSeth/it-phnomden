@@ -261,7 +261,7 @@ const Item1 = () => {
 
   return (
     <div
-    className="bg-slate-100 mt-2 min-h-screen p-4 sm:p-8 md:p-12 text-gray-800">
+    className="bg-slate-100 mt-2 min-h-screen p-4 px-2 sm:p-8 md:p-12 text-gray-800">
 
       {/* Embedded CSS for font loading and styling */}
       <style>
@@ -294,7 +294,7 @@ const Item1 = () => {
         `}
       </style>
       
-      <div className="max-w-4xl mx-auto bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg">
+      <div className="max-w-4xl mt-7 mx-auto bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg">
         <h1 className="text-4xl font-extrabold text-center mb-2 text-blue-700 title-font">
           Improve Yourself 1% Every Day
         </h1>

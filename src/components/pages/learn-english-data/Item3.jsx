@@ -184,7 +184,7 @@ const Item3 = () => {
 
   return (
     <div 
-    className="bg-slate-100 min-h-screen p-4 sm:p-8 md:p-12 text-gray-800">
+    className="bg-slate-100 min-h-screen p-4 px-2 sm:p-8 md:p-12 text-gray-800">
       {/* Embedded CSS for font loading and styling based on user preferences */}
       <style>
         {`
@@ -213,7 +213,7 @@ const Item3 = () => {
         `}
       </style>
       
-      <div className="max-w-4xl mx-auto bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg">
+      <div className="max-w-4xl mx-auto bg-white mt-9 p-6 sm:p-8 md:p-10 rounded-xl shadow-lg">
         {/* Title and Subtitle Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <div className="text-center md:text-left">

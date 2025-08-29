@@ -344,14 +344,14 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12 px-4 font-english-body">
+    <div className="bg-gray-50 min-h-screen py-12 px-2 font-english-body">
       {/* Image slideshow at the top of the screen */}
       <img
         src={images[currentImageIndex]}
         alt="A couple standing together, looking at the city skyline"
-        className="mx-auto rounded-xl shadow-lg mb-8 w-screen h-[500px] object-cover transition-opacity duration-1000 ease-in-out"
+        className="mx-auto mt-2 rounded-xl shadow-lg mb-8 w-screen  h-[200px] md:h-[400px] object-cover object-center transition-opacity duration-1000 ease-in-out"
       />
-
+  
       {/* Voice selection dropdown */}
       <div className="mb-8 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-start sm:justify-start px-4">
         <label className="text-gray-700 font-english-label mb-2 sm:mb-0 mr-4">
@@ -380,7 +380,7 @@ const App = () => {
         {contentData.map((section, index) => (
           <React.Fragment key={index}>
             {/* English Section */}
-            <div className="p-6 lg:p-10 space-y-8 bg-white border-b border-gray-200">
+            <div className="p-5 lg:p-10 space-y-4 bg-white border-b border-gray-200">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-english-subheading font-semibold text-gray-900">
                   {section.english.heading}
@@ -402,7 +402,7 @@ const App = () => {
             </div>
             
             {/* Khmer Section */}
-            <div className="p-6 lg:p-10 space-y-8 bg-gray-100 border-b border-gray-200">
+            <div className="p-5 lg:p-10 space-y-4 bg-gray-100 border-b border-gray-200">
               <h2 className="text-2xl font-khmer-subheading-style font-semibold text-gray-900">
                 {section.khmer.heading}
               </h2>
