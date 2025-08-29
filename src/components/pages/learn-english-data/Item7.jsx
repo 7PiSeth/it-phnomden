@@ -70,54 +70,44 @@ const VolumeUpIcon = () => (
 // Define hard words and their Khmer translations for the new content
 const hardWords = {
   'puzzle': 'ល្បែងផ្គុំរូប',
+  'missing': 'បាត់',
   'stumble': 'ជំពប់ដួល',
+  'wonder': 'ឆ្ងល់',
   'heartbreak': 'ការឈឺចាប់',
   'loneliness': 'ការឯកោ',
   'doubts': 'ការសង្ស័យ',
+  'cloud': 'អាប់អួរ',
+  'sense': 'មានន័យ',
+  'journey': 'ដំណើរ',
   'smooth': 'រលូន',
+  'joy': 'ក្ដីរីករាយ',
+  'experiences': 'បទពិសោធន៍',
   'embrace': 'ទទួលយក',
+  'fully': 'ពេញលេញ',
+  'realize': 'ដឹង',
   'perfection': 'ភាពល្អឥតខ្ចោះ',
   'connection': 'ទំនាក់ទំនង',
+  'conversations': 'ការសន្ទនា',
+  'flow': 'ហូរ',
+  'naturally': 'ធម្មជាតិ',
   'uncomfortable': 'មិនស្រណុកចិត្ត',
-  'complementing': 'បំពេញឱ្យគ្នា',
+  'understood': 'បានយល់',
+  'presence': 'វត្តមាន',
+  'peace': 'សន្តិភាព',
+  'complementing': 'បំពេញបន្ថែម',
+  'erase': 'លុបបំបាត់',
   'scars': 'ស្នាមរបួស',
+  'heal': 'ជាសះស្បើយ',
+  'care': 'ក្ដីស្រឡាញ់',
+  'honesty': 'ភាពស្មោះត្រង់',
+  'respect': 'ការគោរព',
+  'standing together': 'ឈរជាមួយគ្នា',
+  'hardest': 'ពិបាកបំផុត',
+  'storms': 'ព្យុះ',
+  'challenges': 'បញ្ហាប្រឈម',
+  'lasting': 'ស្ថិតស្ថេរ',
   'commitment': 'ការប្ដេជ្ញាចិត្ត',
-  'stepping stones': 'ក្ដារសម្រាប់ដើរ',
-  'chasing': 'ដេញតាម',
-  'forcing': 'បង្ខិតបង្ខំ',
-  'vulnerable': 'ងាយរងគ្រោះ',
-  'authentic': 'ស្មោះត្រង់',
-  'resilience': 'ភាពរឹងមាំ',
-  'patience': 'ការអត់ធ្មត់',
-  'venture': 'ការផ្សងព្រេង',
-  'intuition': 'វិចារណញ្ញាណ',
-  'serenity': 'ភាពស្ងប់ស្ងាត់',
-  'evolve': 'វិវឌ្ឍ',
-  'cherish': 'ស្រឡាញ់',
-  'destiny': 'វាសនា',
-  'unwavering': 'មិនងាករេ',
-  'illuminate': 'បំភ្លឺ',
-  'gratitude': 'អំណរគុណ',
-  'synchronicity': 'ស៊ីសង្វាក់គ្នា',
-  'unconditional': 'គ្មានលក្ខខណ្ឌ',
-  'compromise': 'ការសម្របសម្រួល',
-  'nurture': 'ថែរក្សា',
-  'flaws': 'កំហុស',
-  'vows': 'ពាក្យសច្ចា',
-  'eternity': 'ភាពអស់កល្ប',
-  'sacrifice': 'ការលះបង់',
-  'adversity': 'ឧបសគ្គ',
-  'flourish': 'រីកចម្រើន',
-  'legacy': 'កេរដំណែល',
-  'transformative': 'ផ្លាស់ប្ដូរ',
-  'affection': 'ក្ដីស្រឡាញ់',
-  'compassion': 'មេត្តា',
-  'empathy': 'ការយល់ចិត្ត',
-  'forgiveness': 'ការអភ័យទោស',
-  'vulnerability': 'ភាពងាយរងគ្រោះ',
-  'radiate': 'បញ្ចេញពន្លឺ',
-  'reciprocity': 'ទៅវិញទៅមក',
-  'harmony': 'ភាពសុខដុម',
+  'side by side': 'ជាមួយគ្នា',
 };
 
 // Data structure for the article content, separated by language
@@ -283,25 +273,27 @@ const App = () => {
 
   // Split a string by words and check for hard words
   const renderEnglishText = (text) => {
-    const words = text.split(/(\s+|[,.\?!—])/);
-    let wordIndex = 0;
-    return words.map((word, index) => {
-      // Check if the word is a hard word
-      const trimmedWord = word.trim().toLowerCase().replace(/[,.\?!—]/g, '');
-      const isHardWord = Object.keys(hardWords).includes(trimmedWord);
+    const sortedHardWords = Object.keys(hardWords).sort((a, b) => b.length - a.length);
+    const regex = new RegExp(`(${sortedHardWords.map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+
+    const parts = text.split(regex);
+
+    return parts.map((part, index) => {
+      const trimmedPart = part.trim().toLowerCase();
+      const isHardWord = sortedHardWords.includes(trimmedPart);
 
       if (isHardWord) {
         return (
           <span
             key={index}
             className="hard-word"
-            onClick={(e) => handleHardWordClick(e, trimmedWord)}
+            onClick={(e) => handleHardWordClick(e, trimmedPart)}
           >
-            {word}
+            {part}
           </span>
         );
       }
-      return <React.Fragment key={index}>{word}</React.Fragment>;
+      return <React.Fragment key={index}>{part}</React.Fragment>;
     });
   };
 
@@ -346,14 +338,13 @@ const App = () => {
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-2 font-english-body">
       {/* Image slideshow at the top of the screen */}
-      <img
-        src={images[currentImageIndex]}
-        alt="A couple standing together, looking at the city skyline"
-        className="mx-auto mt-2 rounded-xl shadow-lg mb-8 w-screen  h-[200px] md:h-[400px] object-cover object-center transition-opacity duration-1000 ease-in-out"
-      />
-  
+        <img
+          src={images[currentImageIndex]}
+          alt="A couple standing together, looking at the city skyline"
+          className="mx-auto mt-2 rounded-xl shadow-lg mb-4 w-full max-w-6xl h-56 sm:h-72 md:h-80 lg:h-[400px] object-cover object-center transition-opacity duration-1000 ease-in-out"
+        />
       {/* Voice selection dropdown */}
-      <div className="mb-8 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-start sm:justify-start px-4">
+      <div className="mb-4 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-start sm:justify-start px-4">
         <label className="text-gray-700 font-english-label mb-2 sm:mb-0 mr-4">
           Select Voice:
         </label>

@@ -82,7 +82,6 @@ const LearnEnglish = () => {
               to={data.path}
               className="dark:bg-black dark:bg-opacity-20 text-center bg-white bg-opacity-20 rounded-lg px-4 sm:py-2 py-[7px] flex flex-col   routes-center group relative overflow-hidden transition duration-700 ease-in-out dark:hover:bg-opacity-30 dark:hover:border-gray-600 hover:bg-opacity-30 border-[0.5px] border-transparent hover:border-white active:scale-105 active:duration-100"
             >
-              <span className="ease absolute right-0 -mt-12 h-72 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-200 group-hover:-translate-x-[500px]"></span>
               Learn
             </Link>
           </div>
