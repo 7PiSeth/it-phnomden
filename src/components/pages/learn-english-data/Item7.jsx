@@ -344,12 +344,12 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12 px-4 font-english-body">
+    <div className="bg-gray-50 min-h-screen py-12 px-1 font-english-body">
       {/* Image slideshow at the top of the screen */}
       <img
         src={images[currentImageIndex]}
         alt="A couple standing together, looking at the city skyline"
-        className="mx-auto rounded-xl shadow-lg mb-8 w-screen h-[500px] object-cover transition-opacity duration-1000 ease-in-out"
+        className="mx-auto rounded-xl shadow-lg mb-8 w-screen md:h-[500px] h-[250px] object-cover object-top transition-opacity duration-1000 ease-in-out"
       />
 
       {/* Voice selection dropdown */}

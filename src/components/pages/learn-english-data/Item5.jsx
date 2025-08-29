@@ -341,7 +341,7 @@ const Item5 = () => {
   );
 
   return (
-    <div className="bg-gray-50 text-gray-800 p-4 min-h-screen">
+    <div className="bg-gray-50 text-gray-800 p-4 px-1 min-h-screen">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100..900&family=Varela+Round&family=Cabin:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@100..900&family=Battambang:wght@100;300;400;700;900&family=Suwannaphum:wght@100;300;400;700;900&family=Nokora&display=swap');
@@ -405,7 +405,7 @@ const Item5 = () => {
       `}</style>
 
       {/* Main content container with alternating sections */}
-      <div className="max-w-7xl mx-auto p-4 md:grid md:grid-cols-2 md:gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto p-4 px-1 md:grid md:grid-cols-2 md:gap-8 lg:gap-12">
         {/* English Title & Intro */}
         <div className="space-y-6 md:col-span-1">
           <div className="flex items-center justify-between mb-6">
@@ -417,7 +417,7 @@ const Item5 = () => {
               {(playingId === 'intro' && !isPaused) ? <StopIcon /> : <PlayIcon />}
             </button>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
+          <div className="bg-white p-6 px-2 rounded-xl shadow-md space-y-4">
             <p className="font-english-body-scaled leading-tight text-gray-700">{splitTextByHardWords(englishContent.intro, handleWordClick)}</p>
           </div>
         </div>
@@ -425,7 +425,7 @@ const Item5 = () => {
         {/* Khmer Title & Intro */}
         <div className="space-y-6 mt-8 md:mt-0 md:col-span-1">
           <h1 className="text-3xl lg:text-4xl font-khmer-header font-bold text-center mb-6 md:text-left">{khmerContent.title}</h1>
-          <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
+          <div className="bg-white p-6 px-2 rounded-xl shadow-md space-y-4">
             <p className="font-khmer-body leading-relaxed text-gray-700">{khmerContent.intro}</p>
           </div>
         </div>
@@ -435,7 +435,7 @@ const Item5 = () => {
           <React.Fragment key={index}>
             {/* English Section */}
             <div className="space-y-6 mt-8 md:mt-0 md:col-span-1">
-              <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
+              <div className="bg-white p-6 px-2 rounded-xl shadow-md space-y-4">
                 <div className="flex items-center justify-between">
                   <h2 className="font-english-subheading-scaled font-semibold text-gray-900">{englishSection.heading}</h2>
                   <button
@@ -452,7 +452,7 @@ const Item5 = () => {
             </div>
             {/* Khmer Section */}
             <div className="space-y-6 mt-8 md:mt-0 md:col-span-1">
-              <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
+              <div className="bg-white p-6 px-2 rounded-xl shadow-md space-y-4">
                 <h2 className="text-2xl font-khmer-subheading font-semibold text-gray-900">{khmerContent.sections[index].heading}</h2>
                 <p className="font-khmer-body leading-relaxed text-gray-700 whitespace-pre-line">{khmerContent.sections[index].body}</p>
               </div>
