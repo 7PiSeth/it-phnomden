@@ -349,7 +349,7 @@ const App = () => {
       <img
         src={images[currentImageIndex]}
         alt="A couple standing together, looking at the city skyline"
-        className="mx-auto rounded-xl shadow-lg mb-8 w-full max-w-4xl transition-opacity duration-1000 ease-in-out"
+        className="mx-auto rounded-xl shadow-lg mb-8 w-screen h-[500px] object-cover transition-opacity duration-1000 ease-in-out"
       />
 
       {/* Voice selection dropdown */}

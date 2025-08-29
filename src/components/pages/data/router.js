@@ -203,7 +203,7 @@ export const routes = [
     path: "/Item7",
     element: <Item7 /> ,
     title: "One Day You’re Going To Meet Someone And Everything Will Make Sense",
-    imgcoverlink: "https://i.pinimg.com/1200x/af/64/bf/af64bf8cc0e563747f903eac17fa6ebf.jpg",
+    imgcoverlink: "https://images.pexels.com/photos/1415131/pexels-photo-1415131.jpeg",
     itemtype: "Love ❤️"
   },
   {
