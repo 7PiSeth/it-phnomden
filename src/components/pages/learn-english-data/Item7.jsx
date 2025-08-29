@@ -165,11 +165,11 @@ const contentData = [
   {
     english: {
       heading: 'Why Everything Will Make Sense',
-      body: 'Looking back, you’ll understand why it didn’t work out with anyone else. The heartbreaks will no longer feel like wasted time but stepping stones leading you to the right path. Every tear, every disappointment, every goodbye was shaping you for this person—the one who finally shows you what real love means. ✨ One day, you’ll meet someone who will make you realize that love is not about chasing or forcing—it’s about finding peace, trust, and a shared heartbeat. And when that happens, you’ll see that everything you went through was worth it.',
+      body: 'Looking back, you’ll understand why it didn’t work out with anyone else. The heartbreaks will no longer feel like wasted time but stepping stones leading you to the right path. Every tear, every disappointment, every goodbye was shaping you for this person—the one who finally shows you what real love means. One day, you’ll meet someone who will make you realize that love is not about chasing or forcing—it’s about finding peace, trust, and a shared heartbeat. And when that happens, you’ll see that everything you went through was worth it.',
     },
     khmer: {
       heading: 'ហេតុអ្វីបានជាអ្វីៗនឹងមានន័យ',
-      body: 'ក្រឡេកមើលទៅក្រោយ អ្នកនឹងយល់ថាហេតុអ្វីបានជាវាមិនបានសម្រេចជាមួយអ្នកដទៃ។ ការឈឺចាប់នឹងលែងមានអារម្មណ៍ដូចជាការខ្ជះខ្ជាយពេលវេលាទៀតហើយ ប៉ុន្តែវាគឺជាក្ដារសម្រាប់ដើរនាំអ្នកទៅកាន់ផ្លូវត្រឹមត្រូវ។ ទឹកភ្នែកគ្រប់ដំណក់ ការខកចិត្តគ្រប់យ៉ាង ការលាគ្នាគ្រប់ពេលគឺកំពុងរៀបចំអ្នកសម្រាប់មនុស្សម្នាក់នេះ ដែលជាអ្នកដែលទីបំផុតបង្ហាញអ្នកថាតើស្នេហាពិតមានន័យយ៉ាងណា។ ✨ ថ្ងៃមួយ អ្នកនឹងជួបនរណាម្នាក់ដែលនឹងធ្វើឱ្យអ្នកដឹងថាស្នេហាមិនមែននិយាយអំពីការដេញតាមឬការបង្ខិតបង្ខំទេ ប៉ុន្តែវាគឺនិយាយអំពីការស្វែងរកសន្តិភាព ទំនុកចិត្ត និងចង្វាក់បេះដូងរួម។ ហើយនៅពេលនោះកើតឡើង អ្នកនឹងឃើញថាអ្វីគ្រប់យ៉ាងដែលអ្នកបានឆ្លងកាត់គឺស័ក្តិសម។',
+      body: 'ក្រឡេកមើលទៅក្រោយ អ្នកនឹងយល់ថាហេតុអ្វីបានជាវាមិនបានសម្រេចជាមួយអ្នកដទៃ។ ការឈឺចាប់នឹងលែងមានអារម្មណ៍ដូចជាការខ្ជះខ្ជាយពេលវេលាទៀតហើយ ប៉ុន្តែវាគឺជាក្ដារសម្រាប់ដើរនាំអ្នកទៅកាន់ផ្លូវត្រឹមត្រូវ។ ទឹកភ្នែកគ្រប់ដំណក់ ការខកចិត្តគ្រប់យ៉ាង ការលាគ្នាគ្រប់ពេលគឺកំពុងរៀបចំអ្នកសម្រាប់មនុស្សម្នាក់នេះ ដែលជាអ្នកដែលទីបំផុតបង្ហាញអ្នកថាតើស្នេហាពិតមានន័យយ៉ាងណា។ ថ្ងៃមួយ អ្នកនឹងជួបនរណាម្នាក់ដែលនឹងធ្វើឱ្យអ្នកដឹងថាស្នេហាមិនមែននិយាយអំពីការដេញតាមឬការបង្ខិតបង្ខំទេ ប៉ុន្តែវាគឺនិយាយអំពីការស្វែងរកសន្តិភាព ទំនុកចិត្ត និងចង្វាក់បេះដូងរួម។ ហើយនៅពេលនោះកើតឡើង អ្នកនឹងឃើញថាអ្វីគ្រប់យ៉ាងដែលអ្នកបានឆ្លងកាត់គឺស័ក្តិសម។',
     },
   },
 ];
@@ -336,44 +336,47 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12 px-2 font-english-body">
+    <div className="min-h-screen py-12 px-2 font-english-body bg-gradient-to-br from-indigo-50 to-pink-50 text-gray-900 dark:bg-gradient-to-br dark:from-gray-950 dark:to-gray-800 dark:text-gray-50 transition-colors duration-500">
       {/* Image slideshow at the top of the screen */}
-        <img
-          src={images[currentImageIndex]}
-          alt="A couple standing together, looking at the city skyline"
-          className="mx-auto mt-2 rounded-xl shadow-lg mb-4 w-full max-w-6xl h-56 sm:h-72 md:h-80 lg:h-[400px] object-cover object-center transition-opacity duration-1000 ease-in-out"
-        />
-      {/* Voice selection dropdown */}
-      <div className="mb-4 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-start sm:justify-start px-4">
-        <label className="text-gray-700 font-english-label mb-2 sm:mb-0 mr-4">
-          Select Voice:
-        </label>
-        <select
-          value={selectedVoice ? selectedVoice.name : ''}
-          onChange={(e) => setSelectedVoice(voices.find(v => v.name === e.target.value))}
-          className="p-2 border border-gray-300 rounded-md shadow-sm w-full sm:w-auto font-english-label bg-white text-black"
-        >
-          {voices.length > 0 ? (
-            voices.map((voice) => (
-              <option key={voice.name} value={voice.name}>
-                {voice.name}
-              </option>
-            ))
-          ) : (
-            <option>Loading voices...</option>
-          )}
-        </select>
+      <img
+        src={images[currentImageIndex]}
+        alt="A couple standing together, looking at the city skyline"
+        className="mx-auto mt-2 rounded-xl shadow-lg mb-4 w-full max-w-6xl h-56 sm:h-72 md:h-80 lg:h-[400px] object-cover object-center transition-opacity duration-1000 ease-in-out"
+      />
+      {/* Voice and Theme selection dropdowns */}
+      <div className="mb-4 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-start sm:justify-between px-4">
+        {/* Voice Selection */}
+        <div className="flex flex-col sm:flex-row items-center mb-4 sm:mb-0">
+          <label className="font-english-label mb-2 sm:mb-0 mr-4 text-gray-900 dark:text-gray-50">
+            Select Voice:
+          </label>
+          <select
+            value={selectedVoice ? selectedVoice.name : ''}
+            onChange={(e) => setSelectedVoice(voices.find(v => v.name === e.target.value))}
+            className="p-2 border rounded-md shadow-sm w-full sm:w-auto font-english-label bg-white text-black border-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600"
+          >
+            {voices.length > 0 ? (
+              voices.map((voice) => (
+                <option key={voice.name} value={voice.name}>
+                  {voice.name}
+                </option>
+              ))
+            ) : (
+              <option>Loading voices...</option>
+            )}
+          </select>
+        </div>
       </div>
 
       {/* Main content container for responsive layout */}
-      <div className="max-w-4xl mx-auto rounded-lg shadow-xl overflow-hidden bg-white">
+      <div className="max-w-4xl mx-auto rounded-lg shadow-xl overflow-hidden bg-white/70 dark:bg-gray-900/70 backdrop-blur-md">
         {/* Render content in alternating English and Khmer sections */}
         {contentData.map((section, index) => (
           <React.Fragment key={index}>
             {/* English Section */}
-            <div className="p-5 lg:p-10 space-y-4 bg-white border-b border-gray-200">
+            <div className="p-5 lg:p-10 space-y-4 bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-english-subheading font-semibold text-gray-900">
+                <h2 className="text-2xl font-english-subheading font-semibold">
                   {section.english.heading}
                 </h2>
                 <button
@@ -387,17 +390,17 @@ const App = () => {
                   )}
                 </button>
               </div>
-              <p className="font-english-body leading-relaxed text-gray-700 text-base">
+              <p className="font-english-body leading-relaxed text-base">
                 {renderEnglishText(section.english.body)}
               </p>
             </div>
             
             {/* Khmer Section */}
-            <div className="p-5 lg:p-10 space-y-4 bg-gray-100 border-b border-gray-200">
-              <h2 className="text-2xl font-khmer-subheading-style font-semibold text-gray-900">
+            <div className="p-5 lg:p-10 space-y-4 bg-white/90 dark:bg-gray-950/70 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+              <h2 className="text-2xl font-khmer-subheading-style font-semibold">
                 {section.khmer.heading}
               </h2>
-              <p className="font-khmer-body-style leading-relaxed text-gray-700 whitespace-pre-line">
+              <p className="font-khmer-body-style leading-relaxed whitespace-pre-line text-base">
                 {section.khmer.body}
               </p>
             </div>
@@ -409,11 +412,11 @@ const App = () => {
       {showPopup && (
         <div
           ref={popupRef}
-          className="hard-word-popup"
+          className="hard-word-popup bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
           style={{ top: `${popupContent.y}px`, left: `${popupContent.x}px` }}
         >
           <div className="flex items-center space-x-2">
-            <span className="font-khmer-label-style text-lg text-black">{popupContent.translation}</span>
+            <span className="font-khmer-label-style text-lg">{popupContent.translation}</span>
             <button
               onClick={() => handlePopupAudio(popupContent.word)}
               className="p-1 rounded-full text-blue-500 hover:bg-blue-100 transition-colors duration-200"
@@ -430,9 +433,19 @@ const App = () => {
         @import url('https://fonts.googleapis.com/css2?family=Nokora&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Hanuman&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Battambang&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lato&display=swap');
         
+        .font-english-body {
+          font-family: 'Lato', sans-serif;
+        }
+        .font-english-subheading {
+          font-family: 'Merriweather', serif;
+        }
+        .font-english-label {
+          font-family: 'Montserrat', sans-serif;
+        }
         .font-khmer-header-style {
-          font-family: 'Chenla', cursive;
+          font-family: 'Moul', cursive;
         }
         .font-khmer-subheading-style {
           font-family: 'Nokora', serif;
@@ -448,9 +461,11 @@ const App = () => {
           border-bottom: 1px dashed #4b5563;
           cursor: pointer;
         }
+        .dark .hard-word {
+          border-bottom: 1px dashed rgba(255,255,255,0.5);
+        }
         .hard-word-popup {
           position: absolute;
-          background-color: white;
           border-radius: 8px;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
           padding: 1rem;
