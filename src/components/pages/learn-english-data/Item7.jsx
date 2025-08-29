@@ -380,7 +380,7 @@ const App = () => {
         {contentData.map((section, index) => (
           <React.Fragment key={index}>
             {/* English Section */}
-            <div className="p-6 px-2 lg:p-10 space-y-8 bg-white border-b border-gray-200">
+            <div className="p-6 lg:p-10 space-y-8 bg-white border-b border-gray-200">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-english-subheading font-semibold text-gray-900">
                   {section.english.heading}
@@ -402,7 +402,7 @@ const App = () => {
             </div>
             
             {/* Khmer Section */}
-            <div className="p-6 px-2 lg:p-10 space-y-8 bg-gray-100 border-b border-gray-200">
+            <div className="p-6 lg:p-10 space-y-8 bg-gray-100 border-b border-gray-200">
               <h2 className="text-2xl font-khmer-subheading-style font-semibold text-gray-900">
                 {section.khmer.heading}
               </h2>
