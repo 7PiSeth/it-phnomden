@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import DarkModeToggle from "./components/DarkModeToggle";
+import NavBar from "./components/NavBar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "./components/Footer";
@@ -27,7 +27,7 @@ const App = () => {
     <Router>
       <ScrollToTop /> {/* 👈 Add this */}
       <div className="max-w-screen-lg mx-auto min-h-screen flex flex-col justify-between items-center">
-        <DarkModeToggle />
+        <NavBar />
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={route.element} />
