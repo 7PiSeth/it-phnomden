@@ -1,66 +1,80 @@
-import React,
-{ useEffect, useState
-} from "react";
-import { FaSun
-} from "react-icons/fa";
-import { BsFillMoonStarsFill
-} from "react-icons/bs";
+import React, { useEffect, useState } from "react";
+import { FaSun } from "react-icons/fa";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { motion, AnimatePresence } from "framer-motion";
 
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode
-  ] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  },
-  [darkMode
-  ]);
+    const root = document.documentElement;
+    const themeColorMeta = document.querySelector("meta[name='theme-color']");
 
-  const handleToggle = () => {
-    setDarkMode(!darkMode);
-    document.querySelector("meta[name='theme-color']").content = darkMode ? "rgb(194, 205, 219)": "rgb(16, 24, 43)";
+    if (darkMode) {
+      root.classList.add("dark");
+      themeColorMeta.content = "rgb(16, 24, 43)";
+    } else {
+      root.classList.remove("dark");
+      themeColorMeta.content = "rgb(194, 205, 219)";
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(prevMode => !prevMode);
   };
 
   return (
-    <div className="w-screen dark:text-white h-[60px] px-5 lg:px-12 md:px-7 flex justify-between items-center fixed z-10">
-      <div className="mx-auto">
-        <label htmlFor="theme-toggle" className="relative inline-flex items-center cursor-pointer">
-          { /* Hidden Checkbox */}
-          <input
-            type="checkbox"
-            id="theme-toggle"
-            checked={darkMode
-  }
-            onChange={handleToggle
-  }
-            className="peer sr-only"
-          />
+      <motion.label
+        htmlFor="theme-toggle"
+        className="fixed m-2 z-10 rounded-full inline-flex items-center cursor-pointer"
+        whileTap={{ scale: 0.95 }}
+      >
+        <input
+          type="checkbox"
+          id="theme-toggle"
+          checked={darkMode}
+          onChange={toggleDarkMode}
+          className="peer sr-only"
+        />
 
-          { /* Toggle Track */}
-          <span className="w-16 h-8 bg-gray-300 rounded-full transition-colors duration-300 peer-checked:bg-[#1e2328] dark:bg-gray-700 dark:peer-checked:bg-gray-900"></span>
+        <motion.span
+          layout
+          className={`w-16 h-8 rounded-full ${darkMode ? "bg-gray-800" : "bg-gray-300"}`}
+          transition={{ duration: 0.4 }}
+        />
 
-          { /* Sliding Thumb */}
-          <span
-            className="absolute left-1 top-1 h-6 w-6 flex items-center justify-center rounded-full bg-white transition-transform duration-500 transform-gpu peer-checked:translate-x-8 peer-checked:bg-white dark:bg-gray-400 dark:peer-checked:bg-gray-600"
-          >
+        <motion.span
+          layout
+          className={`absolute left-1 top-1 h-6 w-6 flex items-center justify-center rounded-full shadow-md ${darkMode ? "bg-gray-600" : "bg-white"}`}
+          initial={{ x: darkMode ? 32 : 0 }}
+          animate={{ x: darkMode ? 32 : 0 }}
+          transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        >
+          <AnimatePresence mode="wait" initial={false}>
             {darkMode ? (
-              <BsFillMoonStarsFill size={
-      16
-    } className="text-[#171d25]" />
+              <motion.div
+                key="moon"
+                initial={{ opacity: 0, rotate: -90, scale: 0.6 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: 90, scale: 0.6 }}
+                transition={{ duration: 0.3 }}
+              >
+                <BsFillMoonStarsFill size={16} className="text-white" />
+              </motion.div>
             ) : (
-              <FaSun size={
-      16
-    } className="text-yellow-500" />
-            )
-  }
-          </span>
-        </label>
-      </div>
-    </div>
+              <motion.div
+                key="sun"
+                initial={{ opacity: 0, rotate: 90, scale: 0.6 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: -90, scale: 0.6 }}
+                transition={{ duration: 0.3 }}
+              >
+                <FaSun size={16} className="text-red-500" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.span>
+      </motion.label>
   );
 };
 
