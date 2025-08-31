@@ -209,9 +209,9 @@ export const routes = [
   {
     path: "/Item8",
     element: <Item8 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "Summary: Atomic Habits by James Clear",
+    imgcoverlink: "https://skillandwill.com.au/wp-content/uploads/2021/09/Atomic-Habits-by-James-Clear.jpg",
+    itemtype: "Self-improvement"
   },
   {
     path: "/Item9",
