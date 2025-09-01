@@ -216,9 +216,9 @@ export const routes = [
   {
     path: "/Item9",
     element: <Item9 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "Transform Your Life Today- Jim Rohn",
+    imgcoverlink: "https://brandstrategy.com/wp-content/uploads/2012/11/transformation_brand_science.jpg",
+    itemtype: "Self-improvement"
   },
   {
     path: "/Item10",
