@@ -4,7 +4,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const root = document.documentElement;

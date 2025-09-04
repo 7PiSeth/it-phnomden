@@ -223,9 +223,9 @@ export const routes = [
   {
     path: "/Item10",
     element: <Item10 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "The Hard Truth: Nothing Will Work Unless You Do",
+    imgcoverlink: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDGYSFExSRMe2t2kJCsfPWcj4oqZReyFSNFaABAul0H7jEpQRBx2syeLWWZudfLJB_Th-phTM6wyiSBin-RuMJ83aE-lSXpGjiWHK1za1-G0f5S9xJBaTu2zKpaGgiC88vmOW81khALXgoJLvZoMXyrqX-T9-8Lo9CZP4KMUrf929N-bKXCNfamuZh/w640-h360-rw/Nothing%20Will%20Work%20Unless%20You%20Do.webp=w704-h396-p-k-no-nu",
+    itemtype: "Self-improvement"
   },
   {
     path: "/Item11",
