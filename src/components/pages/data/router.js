@@ -230,9 +230,9 @@ export const routes = [
   {
     path: "/Item11",
     element: <Item11 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "Model Essay for IELTS - Advertising",
+    imgcoverlink: "https://ted-ielts.com/wp-content/uploads/2020/09/ielts-advertising.png",
+    itemtype: "IELTS ESSAY"
   },
   {
     path: "/Item12",
