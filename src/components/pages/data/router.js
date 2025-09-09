@@ -245,9 +245,9 @@ export const routes = [
   {
     path: "/Item13",
     element: <Item13 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "How to Become a Critical Thinker",
+    imgcoverlink: "https://tscfm.org/wp-content/uploads/2024/10/why-is-critical-thinking-important-1024x768.png",
+    itemtype: "Self-Improvement"
   },
   {
     path: "/Item14",
