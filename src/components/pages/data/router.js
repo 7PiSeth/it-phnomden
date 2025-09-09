@@ -237,9 +237,10 @@ export const routes = [
   {
     path: "/Item12",
     element: <Item12 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "Life Lessons I Know at 40 (That I Wish I Knew at 20) A Guide to Personal Growth and Acceptance",
+    imgcoverlink: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*scy1S4tRa0FGoex1",
+    itemtype: "Self-improvement",
+    author: "Mark Manson"
   },
   {
     path: "/Item13",
