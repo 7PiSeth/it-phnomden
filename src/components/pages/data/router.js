@@ -252,9 +252,10 @@ export const routes = [
   {
     path: "/Item14",
     element: <Item14 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "The 13 Principles of Think and Grow Rich",
+    imgcoverlink: "https://cdn.prod.website-files.com/63c5e29f1b5bc83fe0af2489/6741d075e31cec6adac489e2_66f846323dbe7fb190a64f0f_6689600393ba92c0c59032cc_think-and-grow-rich-1.webp",
+    itemtype: "Self-Improvement",
+    author: "Napoleon Hill"
   },
   {
     path: "/Item15",
