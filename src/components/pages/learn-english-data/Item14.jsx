@@ -68,7 +68,16 @@ const hardWords = {
   'unwavering': 'មិនរាថយ',
   'accumulation': 'ការប្រមូលផ្តុំ',
   'blueprint': 'គម្រោងការ',
-  'conceptualized': 'ត្រូវបានបង្កើតឡើង'
+  'conceptualized': 'ត្រូវបានបង្កើតឡើង',
+  'monetary': 'រូបិយវត្ថុ',
+  'sustained': 'បន្ត',
+  'deliberately': 'ដោយចេតនា',
+  'attainment': 'ការសម្រេចបាន',
+  'catalyst': 'កត្តាជំរុញ',
+  'mere': 'គ្រាន់តែ',
+  'tangible': 'ជាក់ស្តែង',
+  'timeless': 'មិនចេះចប់',
+  'masterpiece': 'ស្នាដៃ'
 };
 
 const englishContent = {
