@@ -268,9 +268,9 @@ export const routes = [
   {
     path: "/Item16",
     element: <Item16 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "Rules for Building Wealth & Smart Decisions",
+    imgcoverlink: "https://i.ytimg.com/vi/NXIOwd1oMt0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB4vkTw4JsIdEeZchLb1bl0Hxvutw",
+    itemtype: "Self-Improvement",
   },
   {
     path: "/Item17",
