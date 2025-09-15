@@ -260,9 +260,10 @@ export const routes = [
   {
     path: "/Item15",
     element: <Item15 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "Learn to Depend on Yourself and Become Stronger",
+    imgcoverlink: "https://img.freepik.com/premium-vector/only-person-you-can-rely-is-yourself_24381-1068.jpg",
+    itemtype: "Self-Improvement",
+    author: null
   },
   {
     path: "/Item16",
