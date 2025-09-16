@@ -275,9 +275,9 @@ export const routes = [
   {
     path: "/Item17",
     element: <Item17 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "Building Systems to Achieve Your Goals",
+    imgcoverlink: "https://i.ytimg.com/vi/CuxmTJqpc0U/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLATfG4tgnF3ukmj8uUTa4jqHmynBA",
+    itemtype: "Self-Improvement",
   },
   {
     path: "/Item18",
