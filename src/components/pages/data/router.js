@@ -282,9 +282,9 @@ export const routes = [
   {
     path: "/Item18",
     element: <Item18 /> ,
-    title: null,
-    imgcoverlink: null,
-    itemtype: null
+    title: "Working from Home",
+    imgcoverlink: "https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg?cs=srgb&dl=pexels-olly-935743.jpg&fm=jpg",
+    itemtype: "IELTS"
   },
   {
     path: "/Item19",
